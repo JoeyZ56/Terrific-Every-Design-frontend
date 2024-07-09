@@ -15,7 +15,10 @@ const contact = () => {
         </h2>
       </div>
       <div className="link-container">
-        <a href="mailto:Teddyboy@gmail.com" className="motion-div-container">
+        <a
+          href="mailto:terrificeverydesign@gmail.com"
+          className="motion-div-container"
+        >
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
@@ -24,7 +27,7 @@ const contact = () => {
           >
             <img src={email} alt="email" className="links-image" />
             {/* //"mailto" is a specail property that takes you to a link to email the person */}
-            <p>Teddyboy@gmail.com</p>
+            <p>terrificeverydesign@gmail.com</p>
           </motion.div>
         </a>
         <a href="tel: +1 (530) 228-2523" className="links">

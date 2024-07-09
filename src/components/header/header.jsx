@@ -4,7 +4,7 @@ import placeholderImage from "../../assets/placeholders/profile-image.png";
 const header = () => {
   return (
     <div className="main-header-container">
-      <h1 className="main-header">Ted&apos;s Fabrication</h1>;
+      <h1 className="main-header">Terrific Every Design</h1>;
       <img
         src={placeholderImage}
         alt="profile-image"
