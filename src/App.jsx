@@ -1,15 +1,13 @@
-import Header from "./components/header/header";
-import Contact from "./components/contact/contact";
-import "./App.css";
-import Tickets from "./components/tickets/tickets";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/home";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Contact />
-      <Tickets />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
