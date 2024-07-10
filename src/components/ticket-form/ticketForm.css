@@ -24,7 +24,7 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-part-one {
+.form-container-info {
   display: flex;
   flex-direction: column;
 }
@@ -68,4 +68,35 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.checkbox-container {
+  margin-top: 20px;
+}
+
+.checkbox-group {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkbox-group h6 {
+  margin-right: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.checkbox-input {
+  margin-right: 5px;
 }

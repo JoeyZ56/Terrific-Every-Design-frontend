@@ -5,7 +5,8 @@ const TicketForm = () => {
     <div className="main-container">
       <h1>Ticket Form</h1>
       <form className="form-container">
-        <div className="form-part-one">
+        <div className="form-container-info part-one">
+          <h3>Client Information</h3>
           <input type="text" placeholder="Name" className="form-info" />
           <input type="text" placeholder="Email" className="form-info" />
           <input
@@ -15,6 +16,8 @@ const TicketForm = () => {
           />
           <input type="text" placeholder="Address" className="form-info" />
           <input type="text" placeholder="City" className="form-info" />
+
+          <input type="text" placeholder="Zip Code" className="form-info" />
           <select className="form-info">
             <option value="">Select State</option>
             <option value="AL">Alabama</option>
@@ -68,9 +71,127 @@ const TicketForm = () => {
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
           </select>
-          <input type="text" placeholder="Zip Code" className="form-info" />
         </div>
-        <div className="form-part-two"></div>
+        <div className="form-container-info part-two">
+          <h3>Equipment To Be Used</h3>
+          <input
+            type="text"
+            placeholder="Module Manufacturer"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Size of Module"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Number of Modules"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Inverter Manufacturer"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Number of Inverters"
+            className="form-info"
+          />
+          <select className="form-info" placeholder="Size of Inverter"></select>
+
+          <select className="form-info" placeholder="System Size"></select>
+        </div>
+        <div className="form-container-info part-three">
+          <h3>Electrical Service</h3>
+          <textarea
+            type="text"
+            placeholder="Location of Meter & Panel"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Existing M.S.P. Manufacturer"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Existing M.S.P. Buzz Rate"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Existing Main Breaker Size"
+            className="form-info"
+          />
+          <div className="checkbox-container">
+            <div className="checkbox-group">
+              <h5>M.P.U.</h5>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Yes
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                No
+              </label>
+            </div>
+            <div className="checkbox-group">
+              <h5>De Rate</h5>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Yes
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                No
+              </label>
+            </div>
+          </div>
+        </div>
+        <div className="form-container-info part-four">
+          <div className="checkbox-container">
+            <h5>Roofing Information</h5>
+            <div className="checkbox-group">
+              <h6>Roof Type</h6> <br />
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Shingle
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Flat-Tile
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Metal
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                S-Tile
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Flat-Roof
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Ground-Mount
+              </label>
+            </div>
+          </div>
+          <input
+            type="text"
+            placeholder="Racks To Be Used"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Mounts To Be Used"
+            className="form-info"
+          />
+        </div>
       </form>
     </div>
   );
