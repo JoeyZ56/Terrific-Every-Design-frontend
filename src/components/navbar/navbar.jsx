@@ -3,8 +3,10 @@ import "./navbar.css";
 
 const navbar = () => {
   return (
-    <div>
-      <Link to="/ticketform">Ticket Form</Link>
+    <div className="nav-container">
+      <Link to="/ticketform" className="nav-links">
+        Ticket Form
+      </Link>
     </div>
   );
 };

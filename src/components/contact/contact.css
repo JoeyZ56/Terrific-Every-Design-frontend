@@ -4,8 +4,12 @@
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
   /* background-color: #f8f9fa; */
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); */
 }
 
 .link-container {
@@ -26,10 +30,23 @@
   border-radius: 10%;
   width: 200px;
   padding: 10px;
+  background-color: royalblue;
+  margin-bottom: 10px;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+.links {
+  color: #fff;
+  text-decoration: none;
 }
 
 .links-image {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+}
+
+.contact-text {
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
 }

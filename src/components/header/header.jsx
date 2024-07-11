@@ -10,7 +10,7 @@ const header = () => {
         alt="profile-image"
         className="header-image"
       />
-      <h3 className="header-slogan">Innovate. Create. 3D Print.</h3>
+      <h3 className="header-slogan">Crafting Precision for Solar Success</h3>
     </div>
   );
 };

@@ -1,0 +1,15 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+  color: #fff;
+  text-decoration: none;
+}
+.nav-links:hover {
+  color: #0056b3;
+}

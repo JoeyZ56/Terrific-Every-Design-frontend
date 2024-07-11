@@ -132,26 +132,35 @@ const TicketForm = () => {
           />
           <div className="checkbox-container">
             <div className="checkbox-group">
-              <h5>M.P.U.</h5>
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                Yes
-              </label>
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                No
-              </label>
+              <div className="checkbox-header">
+                <h5>M.P.U.</h5>
+              </div>
+              <div className="checkbox-items">
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Yes
+                </label>
+
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  No
+                </label>
+              </div>
             </div>
             <div className="checkbox-group">
-              <h5>De Rate</h5>
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                Yes
-              </label>
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                No
-              </label>
+              <div className="checkbox-header">
+                <h5>De Rate</h5>
+              </div>
+              <div className="checkbox-items">
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Yes
+                </label>
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  No
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -159,31 +168,35 @@ const TicketForm = () => {
           <div className="checkbox-container">
             <h3>Roofing Information</h3>
             <div className="checkbox-group">
-              <h6>Roof Type</h6> <br />
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                Shingle
-              </label>
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                Flat-Tile
-              </label>
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                Metal
-              </label>
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                S-Tile
-              </label>
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                Flat-Roof
-              </label>
-              <label>
-                <input type="checkbox" className="checkbox-input" />
-                Ground-Mount
-              </label>
+              <div>
+                <h6>Roof Type</h6>
+              </div>
+              <div className="checkbox-items">
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Shingle
+                </label>
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Flat-Tile
+                </label>
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Metal
+                </label>
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  S-Tile
+                </label>
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Flat-Roof
+                </label>
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Ground-Mount
+                </label>
+              </div>
             </div>
           </div>
           <input
@@ -227,45 +240,57 @@ const TicketForm = () => {
         </div>
         <div className="form-container-info part-six">
           <div className="checkbox-group">
-            <h6>Special Request</h6> <br />
-            <label>
-              <input type="checkbox" className="checkbox-input" />
-              Eletrical Engineering Report
-            </label>
-            <label>
-              <input type="checkbox" className="checkbox-input" />
-              Structural Engineering Report
-            </label>
+            <div className="checkbox-header">
+              <h6>Special Request</h6>{" "}
+            </div>
+            <div className="checkbox-items">
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Eletrical Engineering Report
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Structural Engineering Report
+              </label>
+            </div>
+            <div className="checkbox-group">
+              <div className="checkbox-header">
+                <h6>Design Type</h6>
+              </div>
+              <div className="checkbox-items">
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Regular
+                </label>
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Battery
+                </label>
+                <label>
+                  <input type="checkbox" className="checkbox-input" />
+                  Commercial
+                </label>
+              </div>
+            </div>
           </div>
           <div className="checkbox-group">
-            <h6>Design Type</h6> <br />
-            <label>
-              <input type="checkbox" className="checkbox-input" />
-              Regular
-            </label>
-            <label>
-              <input type="checkbox" className="checkbox-input" />
-              Battery
-            </label>
-            <label>
-              <input type="checkbox" className="checkbox-input" />
-              Commercial
-            </label>
-          </div>
-          <div className="checkbox-group">
-            <h6>Priority</h6> <br />
-            <label>
-              <input type="checkbox" className="checkbox-input" />
-              Urgent (2 - 4 Hours) extra $50
-            </label>
-            <label>
-              <input type="checkbox" className="checkbox-input" />
-              Priority (within 24 hours) standard price
-            </label>
-            <label>
-              <input type="checkbox" className="checkbox-input" />
-              Standard (within 48 hours) standard price
-            </label>
+            <div className="checkbox-header">
+              <h6>Priority</h6>
+            </div>
+            <div className="checkbos-items">
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Urgent (2 - 4 Hours) extra $50
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Priority (within 24 hours) standard price
+              </label>
+              <label>
+                <input type="checkbox" className="checkbox-input" />
+                Standard (within 48 hours) standard price
+              </label>
+            </div>
           </div>
         </div>
         <div className="form-container-info part-seven">

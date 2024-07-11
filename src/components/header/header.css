@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -12,4 +12,18 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
+}
+
+.main-header {
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.header-slogan {
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 25px;
 }

@@ -8,17 +8,13 @@ const contact = () => {
     <div className="main-contact-container" id="contact">
       <div className="contact-text-container">
         <h2 className="contact-text">
-          <span>
-            Get started on crafting your ideas today! Call or email us to get a
-            quote!
-          </span>
+          <span>Get started on crafting your solar dreams today!</span>
+          <br />
+          <span> Call or email us to get a quote!</span>
         </h2>
       </div>
       <div className="link-container">
-        <a
-          href="mailto:terrificeverydesign@gmail.com"
-          className="motion-div-container"
-        >
+        <a href="mailto:terrificeverydesign@gmail.com" className="links">
           <motion.div
             whileInView={{ opacity: 1 }}
             whileHover={{ scale: 1.1 }}
