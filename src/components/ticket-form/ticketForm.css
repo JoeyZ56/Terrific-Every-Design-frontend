@@ -1,5 +1,26 @@
 /* ticketForm.css */
 .main-container {
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 1; /* Ensure the back button is above other elements */
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;

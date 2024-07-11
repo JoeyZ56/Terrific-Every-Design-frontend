@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
 import FileUpload from "./fileUpload/fileUpload";
 import "./ticketForm.css";
 
 const TicketForm = () => {
   return (
     <div className="main-container">
+      <Link to="/" className="back-button">
+        Back
+      </Link>
       <h1>Ticket Form</h1>
       <form className="form-container">
         <div className="form-container-info part-one">
@@ -267,6 +271,9 @@ const TicketForm = () => {
         <div className="form-container-info part-seven">
           <FileUpload />
         </div>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
       </form>
     </div>
   );
