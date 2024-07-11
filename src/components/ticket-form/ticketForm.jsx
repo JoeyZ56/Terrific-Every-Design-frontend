@@ -105,7 +105,7 @@ const TicketForm = () => {
         </div>
         <div className="form-container-info part-three">
           <h3>Electrical Service</h3>
-          <textarea
+          <input
             type="text"
             placeholder="Location of Meter & Panel"
             className="form-info"
@@ -152,7 +152,7 @@ const TicketForm = () => {
         </div>
         <div className="form-container-info part-four">
           <div className="checkbox-container">
-            <h5>Roofing Information</h5>
+            <h3>Roofing Information</h3>
             <div className="checkbox-group">
               <h6>Roof Type</h6> <br />
               <label>
@@ -191,6 +191,80 @@ const TicketForm = () => {
             placeholder="Mounts To Be Used"
             className="form-info"
           />
+        </div>
+        <div className="form-container-info part-five">
+          <h3>Battery Information</h3>
+          <input
+            type="text"
+            placeholder="Battery Brand & Model"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Number of Batteries"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Battery Location"
+            className="form-info"
+          />
+          <input
+            type="text"
+            placeholder="Battery Size (kWh)"
+            className="form-info"
+          />
+          <textarea
+            type="text"
+            placeholder="Specific Notes For Site Surveyor"
+            className="form-info"
+          />
+        </div>
+        <div className="form-container-info part-six">
+          <div className="checkbox-group">
+            <h6>Special Request</h6> <br />
+            <label>
+              <input type="checkbox" className="checkbox-input" />
+              Eletrical Engineering Report
+            </label>
+            <label>
+              <input type="checkbox" className="checkbox-input" />
+              Structural Engineering Report
+            </label>
+          </div>
+          <div className="checkbox-group">
+            <h6>Design Type</h6> <br />
+            <label>
+              <input type="checkbox" className="checkbox-input" />
+              Regular
+            </label>
+            <label>
+              <input type="checkbox" className="checkbox-input" />
+              Battery
+            </label>
+            <label>
+              <input type="checkbox" className="checkbox-input" />
+              Commercial
+            </label>
+          </div>
+          <div className="checkbox-group">
+            <h6>Priority</h6> <br />
+            <label>
+              <input type="checkbox" className="checkbox-input" />
+              Urgent (2 - 4 Hours) extra $50
+            </label>
+            <label>
+              <input type="checkbox" className="checkbox-input" />
+              Priority (within 24 hours) standard price
+            </label>
+            <label>
+              <input type="checkbox" className="checkbox-input" />
+              Standard (within 48 hours) standard price
+            </label>
+          </div>
+        </div>
+        <div className="form-container-info part-seven">
+          <h3>Upload Attachemnt</h3>
         </div>
       </form>
     </div>
