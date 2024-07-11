@@ -1,3 +1,4 @@
+import FileUpload from "./fileUpload/fileUpload";
 import "./ticketForm.css";
 
 const TicketForm = () => {
@@ -264,7 +265,7 @@ const TicketForm = () => {
           </div>
         </div>
         <div className="form-container-info part-seven">
-          <h3>Upload Attachemnt</h3>
+          <FileUpload />
         </div>
       </form>
     </div>
