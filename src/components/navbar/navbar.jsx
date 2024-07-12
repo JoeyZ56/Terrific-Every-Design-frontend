@@ -5,7 +5,7 @@ const navbar = () => {
   return (
     <div className="nav-container">
       <Link to="/ticketform" className="nav-links">
-        Ticket Form
+        Go to Ticket Form
       </Link>
     </div>
   );

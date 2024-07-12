@@ -5,10 +5,12 @@ import TicketForm from "./components/ticket-form/ticketForm";
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/ticketform" element={<TicketForm />} />
-      </Routes>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ticketform" element={<TicketForm />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

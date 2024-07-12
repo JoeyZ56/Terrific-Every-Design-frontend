@@ -28,9 +28,9 @@
   gap: 1rem;
   border: 1px solid #111;
   border-radius: 10%;
-  width: 200px;
+  width: 210px;
   padding: 10px;
-  background-color: royalblue;
+  background-color: rgb(152, 153, 154);
   margin-bottom: 10px;
   /* background-color: rgba(0, 0, 0, 0.5); */
 }

@@ -1,15 +1,49 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import FileUpload from "./fileUpload/fileUpload";
 import "./ticketForm.css";
 
 const TicketForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contactNumber: "",
+    address: "",
+    city: "",
+    zipCode: "",
+    state: "",
+    equipment: "",
+    electricalService: "",
+    roofingInfo: "",
+    batteryInfo: "",
+    specialRequest: "",
+    designType: "",
+    priority: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:5000/submit", formData);
+      alert("Form submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error submitting form!");
+    }
+  };
+
   return (
     <div className="main-container">
       <Link to="/" className="back-button">
         Back
       </Link>
       <h1>Ticket Form</h1>
-      <form className="form-container">
+      <form className="form-container" onSubmit={handleSubmit}>
         <div className="form-container-info part-one">
           <h3>Client Information</h3>
           <input type="text" placeholder="Name" className="form-info" />
@@ -82,7 +116,9 @@ const TicketForm = () => {
           <input
             type="text"
             placeholder="Module Manufacturer"
+            name="equipment"
             className="form-info"
+            onChange={handleChange}
           />
           <input
             type="text"
