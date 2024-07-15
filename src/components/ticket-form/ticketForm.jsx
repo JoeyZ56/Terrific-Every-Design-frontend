@@ -42,10 +42,10 @@ const TicketForm = () => {
       <Link to="/" className="back-button">
         Back
       </Link>
-      <h1>Ticket Form</h1>
+      <h1>Request Form</h1>
       <form className="form-container" onSubmit={handleSubmit}>
         <div className="form-container-info part-one">
-          <h3>Client Information</h3>
+          <h3>1. Client Information</h3>
           <input type="text" placeholder="Name" className="form-info" />
           <input type="text" placeholder="Email" className="form-info" />
           <input
@@ -112,7 +112,7 @@ const TicketForm = () => {
           </select>
         </div>
         <div className="form-container-info part-two">
-          <h3>Equipment To Be Used</h3>
+          <h3>2. Equipment To Be Used</h3>
           <input
             type="text"
             placeholder="Module Manufacturer"
@@ -140,12 +140,18 @@ const TicketForm = () => {
             placeholder="Number of Inverters"
             className="form-info"
           />
-          <select className="form-info" placeholder="Size of Inverter"></select>
+          <input
+            className="form-info"
+            placeholder="Size of Inverter                                                                                W"
+          ></input>
 
-          <select className="form-info" placeholder="System Size"></select>
+          <input
+            className="form-info"
+            placeholder="System Size                                                                                    W"
+          ></input>
         </div>
         <div className="form-container-info part-three">
-          <h3>Electrical Service</h3>
+          <h3>3. Electrical Service</h3>
           <input
             type="text"
             placeholder="Location of Meter & Panel"
@@ -202,7 +208,7 @@ const TicketForm = () => {
         </div>
         <div className="form-container-info part-four">
           <div className="checkbox-container">
-            <h3>Roofing Information</h3>
+            <h3>4. Roofing Information</h3>
             <div className="checkbox-group">
               <div>
                 <h6>Roof Type</h6>
@@ -247,7 +253,7 @@ const TicketForm = () => {
           />
         </div>
         <div className="form-container-info part-five">
-          <h3>Battery Information</h3>
+          <h3>5. Battery Information</h3>
           <input
             type="text"
             placeholder="Battery Brand & Model"
@@ -275,6 +281,7 @@ const TicketForm = () => {
           />
         </div>
         <div className="form-container-info part-six">
+          <h3>6. Special Request & Priority</h3>
           <div className="checkbox-group">
             <div className="checkbox-header">
               <h6>Special Request</h6>{" "}
@@ -330,6 +337,7 @@ const TicketForm = () => {
           </div>
         </div>
         <div className="form-container-info part-seven">
+          <h3>7. Attatchemnts</h3>
           <FileUpload />
         </div>
         <button type="submit" className="submit-button">
