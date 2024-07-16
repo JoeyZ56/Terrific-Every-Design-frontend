@@ -6,6 +6,7 @@ import "./ticketForm.css";
 
 const TicketForm = () => {
   const [formData, setFormData] = useState({
+    //part one
     name: "",
     email: "",
     contactNumber: "",
@@ -13,6 +14,7 @@ const TicketForm = () => {
     city: "",
     zipCode: "",
     state: "",
+    //part two
     equipment: "",
     moduleSize: "",
     numberOfModules: "",
@@ -20,6 +22,7 @@ const TicketForm = () => {
     numberOfInverters: "",
     sizeOfInverter: "",
     systemSize: "",
+    //part three
     electricalService: "",
     meterLocation: "",
     mspManufacturer: "",
@@ -27,10 +30,23 @@ const TicketForm = () => {
     mainBreakerSize: "",
     mpu: false,
     deRate: false,
+    //part four
     roofingInfo: [],
-    batteryInfo: "",
-    specialRequest: [],
-    designType: [],
+    racksToBeUsed: "",
+    mountsToBeUsed: "",
+    //part five
+    batteryBrandModel: "",
+    numberOfBatteries: "",
+    batteryLocation: "",
+    batterySize: "",
+    specificNotes: "",
+    // batteryInfo: "",
+    //part six
+    electricalEngineeringReport: false,
+    structuralEngineeringReport: false,
+    designTypeRegular: false,
+    designTypeBattery: false,
+    designTypeCommercial: false,
     priorityUrgent: false,
     priority24Hours: false,
     priority48Hours: false,
