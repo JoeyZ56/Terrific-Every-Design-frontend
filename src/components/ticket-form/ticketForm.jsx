@@ -14,7 +14,18 @@ const TicketForm = () => {
     zipCode: "",
     state: "",
     equipment: "",
+    moduleSize: "",
+    numberOfModules: "",
+    inverterManufacturer: "",
+    numberOfInverters: "",
+    sizeOfInverter: "",
+    systemSize: "",
     electricalService: "",
+    meterLocation: "",
+    mspManufacturer: "",
+    mspBuzzRate: "",
+    mainBreakerSize: "",
+    mpu: false,
     roofingInfo: "",
     batteryInfo: "",
     specialRequest: "",
@@ -46,18 +57,60 @@ const TicketForm = () => {
       <form className="form-container" onSubmit={handleSubmit}>
         <div className="form-container-info part-one">
           <h3>1. Client Information</h3>
-          <input type="text" placeholder="Name" className="form-info" />
-          <input type="text" placeholder="Email" className="form-info" />
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            className="form-info"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            className="form-info"
+            value={formData.email}
+            onChange={handleChange}
+          />
           <input
             type="text"
             placeholder="Contact Number"
+            name="contactNumber"
             className="form-info"
+            value={formData.contactNumber}
+            onChange={handleChange}
           />
-          <input type="text" placeholder="Address" className="form-info" />
-          <input type="text" placeholder="City" className="form-info" />
-
-          <input type="text" placeholder="Zip Code" className="form-info" />
-          <select className="form-info">
+          <input
+            type="text"
+            placeholder="Address"
+            name="address"
+            className="form-info"
+            value={formData.address}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="City"
+            name="city"
+            className="form-info"
+            value={formData.city}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Zip Code"
+            name="zipCode"
+            className="form-info"
+            value={formData.zipCode}
+            onChange={handleChange}
+          />
+          <select
+            className="form-info"
+            name="state"
+            value={formData.state}
+            onChange={handleChange}
+          >
             <option value="">Select State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -118,59 +171,91 @@ const TicketForm = () => {
             placeholder="Module Manufacturer"
             name="equipment"
             className="form-info"
+            value={formData.equipment}
             onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Size of Module"
+            name="moduleSize"
             className="form-info"
+            value={formData.moduleSize}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Number of Modules"
+            name="numberOfModules"
             className="form-info"
+            value={formData.numberOfModules}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Inverter Manufacturer"
+            name="inverterManufacturer"
             className="form-info"
+            value={formData.inverterManufacturer}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Number of Inverters"
+            name="numberOfInverters"
             className="form-info"
+            value={formData.numberOfInverters}
+            onChange={handleChange}
           />
           <input
+            type="text"
+            placeholder="Size of Inverter (W)"
+            name="sizeOfInverter"
             className="form-info"
-            placeholder="Size of Inverter                                                                                W"
-          ></input>
-
+            value={formData.sizeOfInverter}
+            onChange={handleChange}
+          />
           <input
+            type="text"
+            placeholder="System Size (W)"
+            name="systemSize"
             className="form-info"
-            placeholder="System Size                                                                                    W"
-          ></input>
+            value={formData.systemSize}
+            onChange={handleChange}
+          />
         </div>
         <div className="form-container-info part-three">
           <h3>3. Electrical Service</h3>
           <input
             type="text"
             placeholder="Location of Meter & Panel"
+            name="meterLocation"
             className="form-info"
+            value={formData.meterLocation}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Existing M.S.P. Manufacturer"
+            name="mspManufacturer"
             className="form-info"
+            value={formData.mspManufacturer}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Existing M.S.P. Buzz Rate"
+            name="mspBuzzRate"
             className="form-info"
+            value={formData.mspBuzzRate}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Existing Main Breaker Size"
+            name="mainBreakerSize"
             className="form-info"
+            value={formData.mainBreakerSize}
+            onChange={handleChange}
           />
           <div className="checkbox-container">
             <div className="checkbox-group">
@@ -179,12 +264,34 @@ const TicketForm = () => {
               </div>
               <div className="checkbox-items">
                 <label>
-                  <input type="checkbox" className="checkbox-input" />
+                  <input
+                    type="checkbox"
+                    className="checkbox-input"
+                    name="mpu"
+                    checked={formData.mpu}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        mpu: e.target.checked,
+                      })
+                    }
+                  />
                   Yes
                 </label>
 
                 <label>
-                  <input type="checkbox" className="checkbox-input" />
+                  <input
+                    type="checkbox"
+                    className="checkbox-input"
+                    name="mpu"
+                    checked={!formData.mpu}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        mpu: !e.target.checked,
+                      })
+                    }
+                  />
                   No
                 </label>
               </div>
@@ -195,11 +302,33 @@ const TicketForm = () => {
               </div>
               <div className="checkbox-items">
                 <label>
-                  <input type="checkbox" className="checkbox-input" />
+                  <input
+                    type="checkbox"
+                    className="checkbox-input"
+                    name="deRate"
+                    checked={formData.deRate}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        deRate: e.target.checked,
+                      })
+                    }
+                  />
                   Yes
                 </label>
                 <label>
-                  <input type="checkbox" className="checkbox-input" />
+                  <input
+                    type="checkbox"
+                    className="checkbox-input"
+                    name="deRate"
+                    checked={!formData.deRate}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        deRate: !e.target.checked,
+                      })
+                    }
+                  />
                   No
                 </label>
               </div>
@@ -244,12 +373,18 @@ const TicketForm = () => {
           <input
             type="text"
             placeholder="Racks To Be Used"
+            name="racksToBeUsed"
             className="form-info"
+            value={formData.racksToBeUsed}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Mounts To Be Used"
+            name="mountsToBeUsed"
             className="form-info"
+            value={formData.mountsToBeUsed}
+            onChange={handleChange}
           />
         </div>
         <div className="form-container-info part-five">
@@ -257,27 +392,42 @@ const TicketForm = () => {
           <input
             type="text"
             placeholder="Battery Brand & Model"
+            name="batteryBrandModel"
             className="form-info"
+            value={formData.batteryBrandModel}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Number of Batteries"
+            name="numberOfBatteries"
             className="form-info"
+            value={formData.numberOfBatteries}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Battery Location"
+            name="batteryLocation"
             className="form-info"
+            value={formData.batteryLocation}
+            onChange={handleChange}
           />
           <input
             type="text"
             placeholder="Battery Size (kWh)"
+            name="batterySize"
             className="form-info"
+            value={formData.batterySize}
+            onChange={handleChange}
           />
           <textarea
             type="text"
             placeholder="Specific Notes For Site Surveyor"
+            name="specificNotes"
             className="form-info"
+            value={formData.specificNotes}
+            onChange={handleChange}
           />
         </div>
         <div className="form-container-info part-six">
@@ -288,11 +438,33 @@ const TicketForm = () => {
             </div>
             <div className="checkbox-items">
               <label>
-                <input type="checkbox" className="checkbox-input" />
-                Eletrical Engineering Report
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  name="electricalEngineeringReport"
+                  checked={formData.electricalEngineeringReport}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      electricalEngineeringReport: e.target.checked,
+                    })
+                  }
+                />
+                Electrical Engineering Report
               </label>
               <label>
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  name="structuralEngineeringReport"
+                  checked={formData.structuralEngineeringReport}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      structuralEngineeringReport: e.target.checked,
+                    })
+                  }
+                />
                 Structural Engineering Report
               </label>
             </div>
@@ -302,15 +474,48 @@ const TicketForm = () => {
               </div>
               <div className="checkbox-items">
                 <label>
-                  <input type="checkbox" className="checkbox-input" />
+                  <input
+                    type="checkbox"
+                    className="checkbox-input"
+                    name="designTypeRegular"
+                    checked={formData.designTypeRegular}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        designTypeRegular: e.target.checked,
+                      })
+                    }
+                  />
                   Regular
                 </label>
                 <label>
-                  <input type="checkbox" className="checkbox-input" />
+                  <input
+                    type="checkbox"
+                    className="checkbox-input"
+                    name="designTypeBattery"
+                    checked={formData.designTypeBattery}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        designTypeBattery: e.target.checked,
+                      })
+                    }
+                  />
                   Battery
                 </label>
                 <label>
-                  <input type="checkbox" className="checkbox-input" />
+                  <input
+                    type="checkbox"
+                    className="checkbox-input"
+                    name="designTypeCommercial"
+                    checked={formData.designTypeCommercial}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        designTypeCommercial: e.target.checked,
+                      })
+                    }
+                  />
                   Commercial
                 </label>
               </div>
@@ -320,24 +525,57 @@ const TicketForm = () => {
             <div className="checkbox-header">
               <h6>Priority</h6>
             </div>
-            <div className="checkbos-items">
+            <div className="checkbox-items">
               <label>
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  name="priorityUrgent"
+                  checked={formData.priorityUrgent}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      priorityUrgent: e.target.checked,
+                    })
+                  }
+                />
                 Urgent (2 - 4 Hours) extra $50
               </label>
               <label>
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  name="priority24Hours"
+                  checked={formData.priority24Hours}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      priority24Hours: e.target.checked,
+                    })
+                  }
+                />
                 Priority (within 24 hours) standard price
               </label>
               <label>
-                <input type="checkbox" className="checkbox-input" />
+                <input
+                  type="checkbox"
+                  className="checkbox-input"
+                  name="priority48Hours"
+                  checked={formData.priority48Hours}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      priority48Hours: e.target.checked,
+                    })
+                  }
+                />
                 Standard (within 48 hours) standard price
               </label>
             </div>
           </div>
         </div>
         <div className="form-container-info part-seven">
-          <h3>7. Attatchemnts</h3>
+          <h3>7. Attachments</h3>
           <FileUpload />
         </div>
         <button type="submit" className="submit-button">
