@@ -26,11 +26,14 @@ const TicketForm = () => {
     mspBuzzRate: "",
     mainBreakerSize: "",
     mpu: false,
-    roofingInfo: "",
+    deRate: false,
+    roofingInfo: [],
     batteryInfo: "",
-    specialRequest: "",
-    designType: "",
-    priority: "",
+    specialRequest: [],
+    designType: [],
+    priorityUrgent: false,
+    priority24Hours: false,
+    priority48Hours: false,
   });
 
   const handleChange = (e) => {
