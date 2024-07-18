@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/home";
-import TicketForm from "./components/ticket-form/ticketForm";
+import RequestForm from "./components/request-form/requestForm";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ticketform" element={<TicketForm />} />
+          <Route path="/requestform" element={<RequestForm />} />
         </Routes>
       </div>
     </Router>

@@ -1,6 +1,5 @@
 import Header from "../../components/header/header";
 import Contact from "../../components/contact/contact";
-// import Tickets from "../../components/tickets/tickets";
 import Navbar from "../../components/navbar/navbar";
 
 const home = () => {
@@ -9,7 +8,6 @@ const home = () => {
       <Navbar />
       <Header />
       <Contact />
-      {/* <Tickets /> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import "./navbar.css";
 const navbar = () => {
   return (
     <div className="nav-container">
-      <Link to="/ticketform" className="nav-links">
+      <Link to="/requestform" className="nav-links">
         Go to Request Form
       </Link>
     </div>

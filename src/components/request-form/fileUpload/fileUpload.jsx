@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../ticketForm.css";
+import "./fileUpload.css";
 
 const FileUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);

@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import FileUpload from "./fileUpload/fileUpload";
-import "./ticketForm.css";
+import "./requestForm.css";
 
-const TicketForm = () => {
+const RequestForm = () => {
   const [formData, setFormData] = useState({
     //part one
     name: "",
@@ -605,4 +605,4 @@ const TicketForm = () => {
   );
 };
 
-export default TicketForm;
+export default RequestForm;
