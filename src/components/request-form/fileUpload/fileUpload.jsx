@@ -31,7 +31,10 @@ const FileUpload = () => {
 
   return (
     <div className="form-upload part-seven">
-      <h3>Upload Attachment</h3>
+      <div className="attachment-header">
+        <h3>7. Attachments</h3>
+      </div>
+      <h4>Upload Attachment</h4>
       <input type="file" onChange={handleFileChange} />
       <button onClick={handleFileUpload}>Upload</button>
     </div>
