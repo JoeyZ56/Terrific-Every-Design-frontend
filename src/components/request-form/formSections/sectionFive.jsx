@@ -1,3 +1,4 @@
+import propTypes from "prop-types";
 import "../requestForm.css";
 
 const SectionFive = ({ formData, handleChange }) => {
@@ -46,6 +47,17 @@ const SectionFive = ({ formData, handleChange }) => {
       />
     </div>
   );
+};
+
+SectionFive.propTypes = {
+  formData: propTypes.shape({
+    batteryBrandModel: propTypes.string,
+    numberOfBatteries: propTypes.string,
+    batteryLocation: propTypes.string,
+    batterySize: propTypes.string,
+    specificNotes: propTypes.string,
+  }).isRequired,
+  handleChange: propTypes.func.isRequired,
 };
 
 export default SectionFive;

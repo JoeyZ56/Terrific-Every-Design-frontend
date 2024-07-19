@@ -64,6 +64,19 @@ const RequestForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleCheckboxChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => {
+      const updateArray = prevState[name].includes(value)
+        ? prevState[name].filter((item) => item !== value)
+        : [...prevState[name], value];
+      return {
+        ...prevState,
+        [name]: updateArray,
+      };
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -93,14 +106,18 @@ const RequestForm = () => {
         <SectionThree
           formData={formData}
           handleChange={handleChange}
-          setFormData={formData}
+          setFormData={setFormData}
         />
-        <SectionFour formData={formData} handleChange={handleChange} />
+        <SectionFour
+          formData={formData}
+          handleChange={handleChange}
+          handleCheckboxChange={handleCheckboxChange}
+        />
         <SectionFive formData={formData} handleChange={handleChange} />
         <SectionSix
           formData={formData}
           handleChange={handleChange}
-          setFormData={formData}
+          handleCheckboxChange={handleCheckboxChange}
         />
         <FileUpload />
         <button type="submit" className="submit-button">

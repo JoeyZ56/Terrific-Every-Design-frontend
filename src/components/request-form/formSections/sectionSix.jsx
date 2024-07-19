@@ -1,6 +1,7 @@
+import propTypes from "prop-types";
 import "../requestForm.css";
 
-const sectionSix = ({ formData, setFormData }) => {
+const sectionSix = ({ formData, handleCheclboxChange }) => {
   return (
     <div className="form-container-info part-six">
       <h3>6. Special Request & Priority</h3>
@@ -15,12 +16,7 @@ const sectionSix = ({ formData, setFormData }) => {
               className="checkbox-input"
               name="electricalEngineeringReport"
               checked={formData.electricalEngineeringReport}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  electricalEngineeringReport: e.target.checked,
-                })
-              }
+              onChange={handleCheclboxChange}
             />
             Electrical Engineering Report
           </label>
@@ -30,12 +26,7 @@ const sectionSix = ({ formData, setFormData }) => {
               className="checkbox-input"
               name="structuralEngineeringReport"
               checked={formData.structuralEngineeringReport}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  structuralEngineeringReport: e.target.checked,
-                })
-              }
+              onChange={handleCheclboxChange}
             />
             Structural Engineering Report
           </label>
@@ -51,12 +42,7 @@ const sectionSix = ({ formData, setFormData }) => {
                 className="checkbox-input"
                 name="designTypeRegular"
                 checked={formData.designTypeRegular}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    designTypeRegular: e.target.checked,
-                  })
-                }
+                onChange={handleCheclboxChange}
               />
               Regular
             </label>
@@ -66,12 +52,7 @@ const sectionSix = ({ formData, setFormData }) => {
                 className="checkbox-input"
                 name="designTypeBattery"
                 checked={formData.designTypeBattery}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    designTypeBattery: e.target.checked,
-                  })
-                }
+                onChange={handleCheclboxChange}
               />
               Battery
             </label>
@@ -81,12 +62,7 @@ const sectionSix = ({ formData, setFormData }) => {
                 className="checkbox-input"
                 name="designTypeCommercial"
                 checked={formData.designTypeCommercial}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    designTypeCommercial: e.target.checked,
-                  })
-                }
+                onChange={handleCheclboxChange}
               />
               Commercial
             </label>
@@ -104,12 +80,7 @@ const sectionSix = ({ formData, setFormData }) => {
               className="checkbox-input"
               name="priorityUrgent"
               checked={formData.priorityUrgent}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  priorityUrgent: e.target.checked,
-                })
-              }
+              onChange={handleCheclboxChange}
             />
             Urgent (2 - 4 Hours) extra $50
           </label>
@@ -119,12 +90,7 @@ const sectionSix = ({ formData, setFormData }) => {
               className="checkbox-input"
               name="priority24Hours"
               checked={formData.priority24Hours}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  priority24Hours: e.target.checked,
-                })
-              }
+              onChange={handleCheclboxChange}
             />
             Priority (within 24 hours) standard price
           </label>
@@ -134,12 +100,7 @@ const sectionSix = ({ formData, setFormData }) => {
               className="checkbox-input"
               name="priority48Hours"
               checked={formData.priority48Hours}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  priority48Hours: e.target.checked,
-                })
-              }
+              onChange={handleCheclboxChange}
             />
             Standard (within 48 hours) standard price
           </label>
@@ -147,6 +108,21 @@ const sectionSix = ({ formData, setFormData }) => {
       </div>
     </div>
   );
+};
+
+sectionSix.propTypes = {
+  formData: propTypes.shape({
+    electricalEngineeringReport: propTypes.bool,
+    structuralEngineeringReport: propTypes.bool,
+    designTypeRegular: propTypes.bool,
+    designTypeBattery: propTypes.bool,
+    designTypeCommercial: propTypes.bool,
+    priorityUrgent: propTypes.bool,
+    priority24Hours: propTypes.bool,
+    priority48Hours: propTypes.bool,
+  }).isRequired,
+  setFormData: propTypes.func.isRequired,
+  handleCheclboxChange: propTypes.func.isRequired,
 };
 
 export default sectionSix;

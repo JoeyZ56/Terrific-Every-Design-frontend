@@ -1,3 +1,4 @@
+import propTypes from "prop-types";
 import "../requestForm.css";
 
 const SectionTwo = ({ formData, handleChange }) => {
@@ -62,6 +63,19 @@ const SectionTwo = ({ formData, handleChange }) => {
       />
     </div>
   );
+};
+
+SectionTwo.propTypes = {
+  formData: propTypes.shape({
+    equipment: propTypes.string,
+    moduleSize: propTypes.string,
+    numberOfModules: propTypes.string,
+    inverterManufacturer: propTypes.string,
+    numberOfInverters: propTypes.string,
+    sizeOfInverter: propTypes.string,
+    systemSize: propTypes.string,
+  }).isRequired,
+  handleChange: propTypes.func,
 };
 
 export default SectionTwo;

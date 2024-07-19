@@ -1,5 +1,5 @@
+import propTypes from "prop-types";
 import "../requestForm.css";
-//setFormData(formData)
 
 const SectionThree = ({ formData, handleChange, setFormData }) => {
   return (
@@ -116,6 +116,19 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
       </div>
     </div>
   );
+};
+
+SectionThree.propTypes = {
+  formData: propTypes.shape({
+    meterLocation: propTypes.string,
+    mspManufacturer: propTypes.string,
+    mspBuzzRate: propTypes.string,
+    mainBreakerSize: propTypes.string,
+    mpu: propTypes.bool,
+    deRate: propTypes.bool,
+  }).isRequired,
+  handleChange: propTypes.func.isRequired,
+  setFormData: propTypes.func.isRequired,
 };
 
 export default SectionThree;

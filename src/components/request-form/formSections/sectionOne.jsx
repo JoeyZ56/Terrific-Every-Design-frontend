@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "../requestForm.css";
 
 const SectionOne = ({ formData, handleChange }) => {
@@ -112,6 +113,19 @@ const SectionOne = ({ formData, handleChange }) => {
       </select>
     </div>
   );
+};
+
+SectionOne.propTypes = {
+  formData: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    contactNumber: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    zipCode: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default SectionOne;
