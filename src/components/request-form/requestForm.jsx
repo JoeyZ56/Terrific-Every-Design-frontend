@@ -117,9 +117,13 @@ const RequestForm = () => {
         <SectionSix
           formData={formData}
           handleChange={handleChange}
-          handleCheckboxChange={handleCheckboxChange}
+          setFormData={setFormData}
         />
-        <FileUpload />
+        <div>
+          <h3>7. Attachments</h3>
+          <FileUpload />
+        </div>
+
         <button type="submit" className="submit-button">
           Submit
         </button>
