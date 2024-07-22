@@ -31,7 +31,6 @@ const RequestForm = () => {
     sizeOfInverter: "",
     systemSize: "",
     //part three
-    electricalService: "",
     meterLocation: "",
     mspManufacturer: "",
     mspBuzzRate: "",
@@ -48,7 +47,6 @@ const RequestForm = () => {
     batteryLocation: "",
     batterySize: "",
     specificNotes: "",
-    batteryInfo: "",
     //part six
     electricalEngineeringReport: false,
     structuralEngineeringReport: false,
