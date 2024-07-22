@@ -80,22 +80,28 @@ const SectionFour = ({ formData, handleChange, handleCheckboxChange }) => {
           </div>
         </div>
       </div>
-      <input
-        type="text"
-        placeholder="Racks To Be Used"
-        name="racksToBeUsed"
-        className="form-info"
-        value={formData.racksToBeUsed}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Mounts To Be Used"
-        name="mountsToBeUsed"
-        className="form-info"
-        value={formData.mountsToBeUsed}
-        onChange={handleChange}
-      />
+      <label>
+        Racks To Be Used
+        <input
+          type="text"
+          placeholder="Enter Racks..."
+          name="racksToBeUsed"
+          className="form-info"
+          value={formData.racksToBeUsed}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Mounts To Be Used
+        <input
+          type="text"
+          placeholder="Enter Mounts..."
+          name="mountsToBeUsed"
+          className="form-info"
+          value={formData.mountsToBeUsed}
+          onChange={handleChange}
+        />
+      </label>
     </div>
   );
 };

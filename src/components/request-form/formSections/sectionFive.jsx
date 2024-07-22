@@ -5,46 +5,61 @@ const SectionFive = ({ formData, handleChange }) => {
   return (
     <div className="form-container-info part-five">
       <h3>5. Battery Information</h3>
-      <input
-        type="text"
-        placeholder="Battery Brand & Model"
-        name="batteryBrandModel"
-        className="form-info"
-        value={formData.batteryBrandModel}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Number of Batteries"
-        name="numberOfBatteries"
-        className="form-info"
-        value={formData.numberOfBatteries}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Battery Location"
-        name="batteryLocation"
-        className="form-info"
-        value={formData.batteryLocation}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Battery Size (kWh)"
-        name="batterySize"
-        className="form-info"
-        value={formData.batterySize}
-        onChange={handleChange}
-      />
-      <textarea
-        type="text"
-        placeholder="Specific Notes For Site Surveyor"
-        name="specificNotes"
-        className="form-info"
-        value={formData.specificNotes}
-        onChange={handleChange}
-      />
+      <label>
+        Battery Brand & Model
+        <input
+          type="text"
+          placeholder="Enter Brand & Model..."
+          name="batteryBrandModel"
+          className="form-info"
+          value={formData.batteryBrandModel}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Number of Batteries
+        <input
+          type="text"
+          placeholder="Enter Number..."
+          name="numberOfBatteries"
+          className="form-info"
+          value={formData.numberOfBatteries}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Battery Location
+        <input
+          type="text"
+          placeholder="Enter Location..."
+          name="batteryLocation"
+          className="form-info"
+          value={formData.batteryLocation}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Battery Size (kWh)
+        <input
+          type="text"
+          placeholder="Enter Size... (kWh)"
+          name="batterySize"
+          className="form-info"
+          value={formData.batterySize}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Specific Notes For Site Surveyor
+        <textarea
+          type="text"
+          placeholder="Specific Notes... (Optional)"
+          name="specificNotes"
+          className="form-info"
+          value={formData.specificNotes}
+          onChange={handleChange}
+        />
+      </label>
     </div>
   );
 };

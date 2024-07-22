@@ -22,6 +22,8 @@ const RequestForm = () => {
     city: "",
     zipCode: "",
     state: "",
+    ahj: "",
+    apn: "",
     //part two
     equipment: "",
     moduleSize: "",

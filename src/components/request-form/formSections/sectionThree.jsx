@@ -5,38 +5,50 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
   return (
     <div className="form-container-info part-three">
       <h3>3. Electrical Service</h3>
-      <input
-        type="text"
-        placeholder="Location of Meter & Panel"
-        name="meterLocation"
-        className="form-info"
-        value={formData.meterLocation}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Existing M.S.P. Manufacturer"
-        name="mspManufacturer"
-        className="form-info"
-        value={formData.mspManufacturer}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Existing M.S.P. Buzz Rate"
-        name="mspBuzzRate"
-        className="form-info"
-        value={formData.mspBuzzRate}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        placeholder="Existing Main Breaker Size"
-        name="mainBreakerSize"
-        className="form-info"
-        value={formData.mainBreakerSize}
-        onChange={handleChange}
-      />
+      <label>
+        Location of Meter & Panel
+        <input
+          type="text"
+          placeholder="Location..."
+          name="meterLocation"
+          className="form-info"
+          value={formData.meterLocation}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Existing M.S.P. Manufacturer
+        <input
+          type="text"
+          placeholder="Enter Existing M.S.P...."
+          name="mspManufacturer"
+          className="form-info"
+          value={formData.mspManufacturer}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Existing M.S.P. Buzz Rate
+        <input
+          type="text"
+          placeholder="Enter Buzz Rate..."
+          name="mspBuzzRate"
+          className="form-info"
+          value={formData.mspBuzzRate}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Existing Main Breaker Size
+        <input
+          type="text"
+          placeholder="Enter Breaker Size..."
+          name="mainBreakerSize"
+          className="form-info"
+          value={formData.mainBreakerSize}
+          onChange={handleChange}
+        />
+      </label>
       <div className="checkbox-container">
         <div className="checkbox-group">
           <div className="checkbox-header">

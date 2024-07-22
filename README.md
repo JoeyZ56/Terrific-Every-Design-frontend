@@ -1,7 +1,10 @@
 Todo:
 Project grid
+sending image files to email address
 
 Issues to fix:
-check box form data not bing regestered || not showing up as string name rather array number
-consider approach with "handlecheckboxchange" verses using an updated state function for the array options of checkbox items
-server not sending the email to the contractor
+
+1. check box form data not being regestered or
+   not showing up as string name rather array number (priority)
+
+server not sending the email to the contractor (fixed)
