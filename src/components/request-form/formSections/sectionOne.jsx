@@ -31,7 +31,7 @@ const SectionOne = ({ formData, handleChange }) => {
         Contact Number
         <input
           type="text"
-          placeholder="Enter Contact Number..."
+          placeholder="Enter Number..."
           name="contactNumber"
           className="form-info"
           value={formData.contactNumber}

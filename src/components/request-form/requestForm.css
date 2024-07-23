@@ -134,3 +134,104 @@ button:hover {
 .checkbox-input {
   margin-right: 5px;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .back-button {
+    margin: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  h3 {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+
+  .form-info {
+    font-size: 14px;
+    padding: 8px;
+    width: 92vw;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .checkbox-group h6 {
+    font-size: 14px;
+  }
+
+  .checkbox-group label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 5px;
+  }
+
+  .back-button {
+    margin: 5px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .form-container {
+    padding: 10px;
+  }
+
+  .form-info {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checkbox-group h6 {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .checkbox-group label {
+    font-size: 10px;
+    margin-bottom: 5px;
+  }
+}
