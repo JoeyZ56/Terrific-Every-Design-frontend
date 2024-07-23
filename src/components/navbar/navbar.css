@@ -17,6 +17,7 @@
 .nav-links {
   color: #fff;
   text-decoration: none;
+  margin-left: 20px;
 }
 .nav-links:hover {
   color: #0056b3;

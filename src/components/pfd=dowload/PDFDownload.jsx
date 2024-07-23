@@ -1,4 +1,5 @@
 import { saveAs } from "file-saver";
+import { motion } from "framer-motion";
 import "./PDFDownload.css";
 
 const PDFDownload = () => {
@@ -17,11 +18,15 @@ const PDFDownload = () => {
   };
 
   return (
-    <div>
+    <motion.div
+      whileInView={{ opacity: 1 }}
+      whileHover={{ scale: 1.1 }}
+      transition={{ duration: 0.5, type: "tween" }}
+    >
       <button onClick={handlePDFDownload}>
         Download Site Survey Check List
       </button>
-    </div>
+    </motion.div>
   );
 };
 
