@@ -124,10 +124,8 @@ const RequestForm = () => {
           handleChange={handleChange}
           setFormData={setFormData}
         />
-        <div>
-          <h3>7. Attachments</h3>
-          <FileUpload formData={formData} handleFileChange={handleFileChange} />
-        </div>
+
+        <FileUpload formData={formData} handleFileChange={handleFileChange} />
 
         <button type="submit" className="submit-button">
           Submit Request

@@ -3,13 +3,15 @@ import "./fileUpload.css";
 
 const FileUpload = ({ formData, handleFileChange }) => {
   return (
-    <div className="form-upload part-seven">
-      <h4>Upload Attachment</h4>
-      <input
-        type="file"
-        onChange={handleFileChange}
-        value={formData.fileUpload}
-      />
+    <div>
+      <h3>7. Upload Attachment</h3>
+      <div className="form-upload part-seven">
+        <input
+          type="file"
+          onChange={handleFileChange}
+          value={formData.fileUpload}
+        />
+      </div>
     </div>
   );
 };
