@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
-import PDFDownload from "../pfd=dowload/PDFDownload";
+import PDFDownload from "../pfddowload/PDFDownload";
 
 const navbar = () => {
   return (

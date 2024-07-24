@@ -58,9 +58,14 @@ const RequestForm = () => {
     priorityUrgent: false,
     priority24Hours: false,
     priority48Hours: false,
+    fileUpLoad: null,
   });
 
   const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -121,11 +126,11 @@ const RequestForm = () => {
         />
         <div>
           <h3>7. Attachments</h3>
-          <FileUpload />
+          <FileUpload formData={formData} handleFileChange={handleFileChange} />
         </div>
 
         <button type="submit" className="submit-button">
-          Submit
+          Submit Request
         </button>
       </form>
     </div>

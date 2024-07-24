@@ -15,18 +15,16 @@ const Modal = ({ children, onClose }) => {
 
     return () => {
       modalRoot.removeChild(elRef.current);
-      if (onClose) {
-        onClose();
-      }
     };
-  }),
-    [onClose];
+  }, []);
 
   return createPortal(
     <>
-      <div className="modal-overlay"></div>
+      <div className="modal-overlay" onClick={onClose}></div>
       <div className="modal-container">
-        <div onClick={onClose} className="close-btn"></div>
+        <div onClick={onClose} className="close-btn">
+          X
+        </div>
         {children}
       </div>
     </>,
