@@ -90,7 +90,12 @@ const RequestForm = () => {
     try {
       await axios.post(
         "http://localhost:5000/requests/submit-request",
-        formData
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
       alert("Form submitted successfully!");
     } catch (error) {
