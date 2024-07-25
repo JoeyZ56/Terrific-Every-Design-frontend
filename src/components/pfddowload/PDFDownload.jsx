@@ -29,7 +29,7 @@ const PDFDownload = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.5, type: "tween" }}
       >
-        <button onClick={handlePDFDownload}>
+        <button onClick={handlePDFDownload} className="pdf-btn">
           Download Site Survey Check List
         </button>
       </motion.div>

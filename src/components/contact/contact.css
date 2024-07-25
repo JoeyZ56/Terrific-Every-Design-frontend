@@ -30,12 +30,12 @@
   border-radius: 10%;
   width: 210px;
   padding: 10px;
-  background-color: rgb(152, 153, 154);
+  background-color: #fff;
   margin-bottom: 10px;
   /* background-color: rgba(0, 0, 0, 0.5); */
 }
 .links {
-  color: #fff;
+  color: #111;
   text-decoration: none;
 }
 

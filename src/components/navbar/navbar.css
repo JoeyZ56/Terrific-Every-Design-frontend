@@ -18,7 +18,12 @@
   color: #fff;
   text-decoration: none;
   margin-left: 20px;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* flex-direction: row; */
 }
 .nav-links:hover {
-  color: #0056b3;
+  color: #969798;
 }
