@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { bar } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import "./requestGraph.css";
 
 const RequestGraph = () => {
@@ -8,13 +8,15 @@ const RequestGraph = () => {
 
   const fetchRequestData = async () => {
     try {
-      const res = await fetch("http://localhost:5000/requests");
+      const res = await fetch("http://localhost:5000/get-requests");
       const data = await res.json();
       setData(data);
       console.log(data);
 
       //process data to create a chart data object
-      const dates = data.map((request) => request.createdAt);
+      const dates = data
+        .map((request) => request.createdAt)
+        .toLoaclDateString();
       const dateCounts = dates.reduce((acc, date) => {
         acc[date] = (acc[date] || 0) + 1;
         return acc;
@@ -36,7 +38,7 @@ const RequestGraph = () => {
         ],
       });
     } catch (error) {
-      console.error("Error fetching request data: ", error);
+      console.log("Error fetching request data: ", error);
     }
   };
 
@@ -47,8 +49,11 @@ const RequestGraph = () => {
   return (
     <div className="main-container">
       <h1>Request Graph</h1>
+      <div className="number-of-requests">
+        <h2>Total Requests: {data.length}</h2>
+      </div>
       <div>
-        <h2>{data.length}</h2>
+        <Bar data={chartData} />
       </div>
     </div>
   );
