@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
+import ErrorBoundary from "../errorBoundary/errorBoundary";
 import "./requestGraph.css";
 
 const RequestGraph = () => {
@@ -59,4 +60,13 @@ const RequestGraph = () => {
   );
 };
 
-export default RequestGraph;
+function RequestGraphWithErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      errorComponent={<h2>Visual Graph is down...</h2>}
+      <RequestGraph {...props} />
+    </ErrorBoundary>
+  );
+}
+
+export default RequestGraphWithErrorBoundary;
