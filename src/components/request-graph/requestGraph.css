@@ -1,7 +1,13 @@
 .main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.number-of-requests {
+  margin: 20px 0;
+}
+
+.chart-container {
+  width: 80%;
+  margin: 0 auto;
 }
