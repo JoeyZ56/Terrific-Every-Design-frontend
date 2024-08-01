@@ -1,50 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Bar } from "react-chartjs-2";
 import ErrorBoundary from "../errorBoundary/errorBoundary";
+import fetchRequestData from "./fetchRequestGraph";
 import "./requestGraph.css";
 
 const RequestGraph = () => {
   const [data, setData] = useState([]);
   const [chartData, setChartData] = useState({});
-
-  const fetchRequestData = async () => {
-    try {
-      const res = await fetch("http://localhost:5000/get-requests");
-      const data = await res.json();
-      setData(data);
-      console.log(data);
-
-      //process data to create a chart data object
-      const dates = data
-        .map((request) => request.createdAt)
-        .toLoaclDateString();
-      const dateCounts = dates.reduce((acc, date) => {
-        acc[date] = (acc[date] || 0) + 1;
-        return acc;
-      }, {});
-
-      const labels = Object.keys(dateCounts);
-      const counts = Object.value(dateCounts);
-
-      setChartData({
-        labels,
-        datasets: [
-          {
-            label: "Requests",
-            data: Object.values(dateCounts),
-            backgroundColor: "rgba(75, 192, 192, 0.2)",
-            borderColor: "rgba(75, 192, 192, 1)",
-            borderWidth: 1,
-          },
-        ],
-      });
-    } catch (error) {
-      console.log("Error fetching request data: ", error);
-    }
-  };
+  const chartInstanceRef = useRef(null);
 
   useEffect(() => {
-    fetchRequestData();
+    fetchRequestData({ setData, setChartData });
+
+    return () => {
+      // Cleanup chart instance to avoid the error
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+      }
+    };
   }, []);
 
   return (
@@ -53,8 +26,19 @@ const RequestGraph = () => {
       <div className="number-of-requests">
         <h2>Total Requests: {data.length}</h2>
       </div>
-      <div>
-        <Bar data={chartData} />
+      <div className="chart-container">
+        {chartData.labels && chartData.labels.length > 0 ? (
+          <Bar
+            data={chartData}
+            ref={(chartRef) => {
+              if (chartRef && chartRef.chartInstance) {
+                chartInstanceRef.current = chartRef.chartInstance;
+              }
+            }}
+          />
+        ) : (
+          <h2 className="no-data-message">No data available to display</h2>
+        )}
       </div>
     </div>
   );
@@ -62,8 +46,11 @@ const RequestGraph = () => {
 
 function RequestGraphWithErrorBoundary(props) {
   return (
-    <ErrorBoundary>
-      errorComponent={<h2>Visual Graph is down...</h2>}
+    <ErrorBoundary
+      fallbackComponent={
+        <h2 className="error-boundary-message">Visual Graph is down...</h2>
+      }
+    >
       <RequestGraph {...props} />
     </ErrorBoundary>
   );

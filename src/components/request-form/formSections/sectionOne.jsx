@@ -75,7 +75,8 @@ const SectionOne = ({ formData, handleChange }) => {
         State
         <select
           className="form-info"
-          name="Select State..."
+          placeholder="Select State..."
+          name="state"
           value={formData.state}
           onChange={handleChange}
         >

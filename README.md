@@ -1,15 +1,12 @@
 Todo:
-Project grid
-sending image files to email address
 
 Issues to fix:
 
-1. check box form data not being regestered or
-   not showing up as string name rather array number (priority) (fixed)
+1. Fix 404 Error with Request Graph not connecting to route
 
-server not sending the email to the contractor (fixed)
+2. Fix the file send in Form Data
 
-ideas:
+Ideas:
 
 1. PDF FILE
    A. view through modal or have dedicated page to fill out form and sent to you

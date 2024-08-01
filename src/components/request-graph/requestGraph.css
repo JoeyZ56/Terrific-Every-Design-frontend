@@ -11,3 +11,12 @@
   width: 80%;
   margin: 0 auto;
 }
+
+.error-boundary-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  color: #fff;
+}
