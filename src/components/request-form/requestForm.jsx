@@ -58,6 +58,7 @@ const RequestForm = () => {
     priorityUrgent: false,
     priority24Hours: false,
     priority48Hours: false,
+    //part seven
     fileUpLoad: null,
   });
 
@@ -66,7 +67,7 @@ const RequestForm = () => {
   };
 
   const handleFileChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.files[0] });
   };
 
   const handleCheckboxChange = (e) => {

@@ -6,7 +6,7 @@ const SectionTwo = ({ formData, handleChange }) => {
     <div className="form-container-info part-two">
       <h3>2. Equipment To Be Used</h3>
       <label>
-        Module Manufacturer
+        Module Number
         <input
           type="text"
           placeholder="Enter Module..."
@@ -61,10 +61,10 @@ const SectionTwo = ({ formData, handleChange }) => {
         />
       </label>
       <label>
-        Size of Inverter (W)
+        Size of Inverter (W) / (VA)
         <input
           type="text"
-          placeholder="Enter Size... (W)"
+          placeholder="Enter Size... (W) / (VA)"
           name="sizeOfInverter"
           className="form-info"
           value={formData.sizeOfInverter}

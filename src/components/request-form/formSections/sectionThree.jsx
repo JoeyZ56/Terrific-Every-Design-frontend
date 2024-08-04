@@ -28,10 +28,10 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
         />
       </label>
       <label>
-        Existing M.S.P. Buzz Rate
+        M.S.P. Bus Rate
         <input
           type="text"
-          placeholder="Enter Buzz Rate..."
+          placeholder="Enter Bus Rate..."
           name="mspBuzzRate"
           className="form-info"
           value={formData.mspBuzzRate}
@@ -39,7 +39,7 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
         />
       </label>
       <label>
-        Existing Main Breaker Size
+        Main Breaker Size
         <input
           type="text"
           placeholder="Enter Breaker Size..."

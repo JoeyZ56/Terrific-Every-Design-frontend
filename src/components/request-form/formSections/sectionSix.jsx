@@ -112,7 +112,7 @@ const sectionSix = ({ formData, setFormData }) => {
                 })
               }
             />
-            Urgent (2 - 4 Hours) extra $50
+            Urgent (6 - 12 Hours) extra $50
           </label>
           <label>
             <input

@@ -1,10 +1,13 @@
 Todo:
+Create loading feature for form on send
+add subtotal section for accumulated price
+create multi file upload for images
 
 Issues to fix:
 
 1. Fix 404 Error with Request Graph not connecting to route
 
-2. Fix the file send in Form Data
+2. File Sent is not sending image, but numbered array
 
 Ideas:
 
@@ -17,3 +20,20 @@ Show how data is sent from the form to email.
 what form feilds do you want to be "required" to be filled out?
 Does he want the project grid and job request count?
 Logo?
+
+Form fixes:
+section 1.
+name not required or just change to company name
+
+section 2.
+
+modal manufacenur to modal number
+number of invertners not required (optional)
+
+section 3.
+
+location add file upload for photos of location
+
+Existing M.S.P. Manufacturer to optional
+
+section five optional, required for california
