@@ -6,10 +6,10 @@ const SectionOne = ({ formData, handleChange }) => {
     <div className="form-container-info part-one">
       <h3>1. Client Information</h3>
       <label>
-        Name
+        Name or Company
         <input
           type="text"
-          placeholder="Enter Name..."
+          placeholder="Enter Name... (optional)"
           name="name"
           className="form-info"
           value={formData.name}

@@ -5,6 +5,9 @@ const SectionFive = ({ formData, handleChange }) => {
   return (
     <div className="form-container-info part-five">
       <h3>5. Battery Information</h3>
+      <h5 className="option-warning">
+        *Section Five is optional, except for california based projects
+      </h5>
       <label>
         Battery Brand & Model
         <input

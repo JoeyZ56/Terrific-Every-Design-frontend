@@ -36,4 +36,6 @@ location add file upload for photos of location
 
 Existing M.S.P. Manufacturer to optional
 
-section five optional, required for california
+section 5.
+
+optional, required for california

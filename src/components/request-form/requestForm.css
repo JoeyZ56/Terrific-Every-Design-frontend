@@ -235,3 +235,7 @@ button:hover {
     margin-bottom: 5px;
   }
 }
+
+.option-warning {
+  color: #e21313;
+}

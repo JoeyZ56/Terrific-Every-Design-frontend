@@ -53,7 +53,7 @@ const SectionTwo = ({ formData, handleChange }) => {
         Number of Inverters
         <input
           type="text"
-          placeholder="Enter Number..."
+          placeholder="Enter Number... (optional)"
           name="numberOfInverters"
           className="form-info"
           value={formData.numberOfInverters}
