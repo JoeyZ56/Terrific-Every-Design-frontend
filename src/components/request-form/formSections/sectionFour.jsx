@@ -89,6 +89,7 @@ const SectionFour = ({ formData, handleChange, handleCheckboxChange }) => {
           className="form-info"
           value={formData.racksToBeUsed}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -100,6 +101,7 @@ const SectionFour = ({ formData, handleChange, handleCheckboxChange }) => {
           className="form-info"
           value={formData.mountsToBeUsed}
           onChange={handleChange}
+          required
         />
       </label>
     </div>

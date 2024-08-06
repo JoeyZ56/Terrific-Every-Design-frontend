@@ -20,7 +20,7 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
         Existing M.S.P. Manufacturer
         <input
           type="text"
-          placeholder="Enter Existing M.S.P...."
+          placeholder="Enter Existing M.S.P.... (optional)"
           name="mspManufacturer"
           className="form-info"
           value={formData.mspManufacturer}

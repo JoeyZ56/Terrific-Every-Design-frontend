@@ -25,6 +25,7 @@ const SectionOne = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.email}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -36,6 +37,7 @@ const SectionOne = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.contactNumber}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -47,6 +49,7 @@ const SectionOne = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.address}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -58,6 +61,7 @@ const SectionOne = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.city}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -69,6 +73,7 @@ const SectionOne = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.zipCode}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -79,6 +84,7 @@ const SectionOne = ({ formData, handleChange }) => {
           name="state"
           value={formData.state}
           onChange={handleChange}
+          required
         >
           <option value="">Select State</option>
           <option value="AL">Alabama</option>
@@ -137,7 +143,7 @@ const SectionOne = ({ formData, handleChange }) => {
         AHJ
         <input
           type="text"
-          placeholder="Enter AHJ..."
+          placeholder="Enter AHJ... (optional)"
           name="ahj"
           className="form-info"
           value={formData.ahj}
@@ -148,7 +154,7 @@ const SectionOne = ({ formData, handleChange }) => {
         APN (If Known)
         <input
           type="text"
-          placeholder="Enter APN..."
+          placeholder="Enter APN... (optional)"
           name="apn"
           className="form-info"
           value={formData.apn}

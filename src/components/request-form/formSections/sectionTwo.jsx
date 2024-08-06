@@ -14,6 +14,7 @@ const SectionTwo = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.equipment}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -25,6 +26,7 @@ const SectionTwo = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.moduleSize}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -36,6 +38,7 @@ const SectionTwo = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.numberOfModules}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -47,6 +50,7 @@ const SectionTwo = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.inverterManufacturer}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -69,6 +73,7 @@ const SectionTwo = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.sizeOfInverter}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -80,6 +85,7 @@ const SectionTwo = ({ formData, handleChange }) => {
           className="form-info"
           value={formData.systemSize}
           onChange={handleChange}
+          required
         />
       </label>
     </div>
