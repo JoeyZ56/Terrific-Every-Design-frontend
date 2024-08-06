@@ -14,6 +14,7 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
           className="form-info"
           value={formData.meterLocation}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -36,6 +37,7 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
           className="form-info"
           value={formData.mspBuzzRate}
           onChange={handleChange}
+          required
         />
       </label>
       <label>
@@ -47,6 +49,7 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
           className="form-info"
           value={formData.mainBreakerSize}
           onChange={handleChange}
+          required
         />
       </label>
       <div className="checkbox-container">
