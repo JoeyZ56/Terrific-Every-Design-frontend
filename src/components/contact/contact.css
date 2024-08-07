@@ -4,12 +4,12 @@
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: #fff;
   width: 50%;
   margin: 0 auto;
   border-radius: 10px;
-  /* background-color: #f8f9fa; */
-  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); */
+  margin-top: 1rem;
 }
 
 .link-container {
@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  border: 1px solid #111;
+  border: 1px solid #5d5c5c;
   border-radius: 10%;
   width: 210px;
   padding: 10px;
@@ -49,4 +49,8 @@
   color: #fff;
   text-align: center;
   margin-top: 20px;
+}
+
+span {
+  color: #111;
 }

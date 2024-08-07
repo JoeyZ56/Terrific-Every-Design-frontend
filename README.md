@@ -1,16 +1,8 @@
 Todo:
-Create loading feature for form on send
 add subtotal section for accumulated price
 create multi file upload for images
 
 Issues to fix:
-
-1. Fix 404 Error with Request Graph not connecting to route
-
-Ideas:
-
-1. PDF FILE
-   A. view through modal or have dedicated page to fill out form and sent to you
 
 Notes For Ted:
 Show basic set up with layout.
@@ -37,3 +29,37 @@ Existing M.S.P. Manufacturer to optional
 section 5.
 
 optional, required for california
+
+Technologies Used:
+
+1. Chart.js Plugin: is a JavaScript library that allows developers to create beautiful, interactive charts and graphs in web applications. It provides a straightforward way to visualize data using various chart types, such as line charts, bar charts, pie charts, and more.
+
+A. Key Features
+Simple and Flexible: Chart.js is designed to be simple to use, but it also offers extensive customization options for advanced users.
+Responsive Design: Charts are responsive and adapt to different screen sizes, ensuring a great user experience across devices.
+Interactive Elements: Provides interactive features like tooltips, legends, and hover effects.
+
+B. Modular Components: Allows you to include only the components you need, which helps keep the library lightweight.
+Core Components
+Chart Types: Chart.js supports a variety of chart types, including:
+
+C. Line: Ideal for showing trends over time.
+D. Bar: Useful for comparing quantities across different categories.
+E. Radar: Good for displaying data in a circular format.
+F. Doughnut/Pie: Great for showing proportions of a whole.
+G. Polar Area: Similar to doughnut charts but with a polar coordinate system.
+H. Bubble: For plotting data points in a three-dimensional space.
+I. Scatter: Shows data points plotted along two axes.
+J. Scales: Charts use scales to map data values to visual properties. Common scales include:
+
+K. CategoryScale: For categorical data (e.g., months, categories).
+L. LinearScale: For numerical data with continuous ranges.
+M. LogarithmicScale: For data that spans several orders of magnitude.
+N. Elements: The visual components of a chart:
+
+O. BarElement: Represents bars in bar charts.
+P. LineElement: Represents lines in line charts.
+Q. PointElement: Represents data points in scatter or line charts.
+R. Plugins: Extend the functionality of Chart.js with additional features or customizations, such as annotations or data labels.
+
+Install: npm install chart.js
