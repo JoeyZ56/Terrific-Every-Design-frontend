@@ -7,8 +7,6 @@ Issues to fix:
 
 1. Fix 404 Error with Request Graph not connecting to route
 
-2. File Sent is not sending image, but numbered array
-
 Ideas:
 
 1. PDF FILE

@@ -117,7 +117,12 @@ const RequestForm = () => {
       </Link>
       {loading ? (
         <div>
-          <ClipLoader color={"#bbb"} loading={loading} size={150} />
+          <ClipLoader
+            color={"#bbb"}
+            loading={loading}
+            size={150}
+            className="loading-spinner"
+          />
         </div>
       ) : (
         <>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./navbar.css";
 
-import PDFDownload from "../pfddowload/PDFDownload";
+// import PDFDownload from "../pfddowload/PDFDownload";
 
 const navbar = () => {
   return (
@@ -21,7 +21,7 @@ const navbar = () => {
           </Link>
         </motion.div>
 
-        <PDFDownload />
+        {/* <PDFDownload /> */}
       </div>
     </div>
   );
