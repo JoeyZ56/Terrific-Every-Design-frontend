@@ -69,7 +69,13 @@ const RequestForm = () => {
   };
 
   const handleFileChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: Array.from(e.target.files) }); //[0] to get the first file
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: [
+        ...(prevState[e.target.name] || []),
+        ...Array.from(e.target.files),
+      ],
+    }));
   };
 
   const handleCheckboxChange = (e) => {
@@ -92,7 +98,8 @@ const RequestForm = () => {
     const data = new FormData();
     for (const key in formData) {
       if (key === "fileUpload") {
-        formData.key.forEach((file) => {
+        const files = formData[key] || [];
+        files.forEach((file) => {
           data.append("fileUpload", file);
         });
       } else {
