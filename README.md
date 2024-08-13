@@ -1,6 +1,7 @@
 Todo:
 add subtotal section for accumulated price
 create multi file upload for images
+add error boundary for form
 
 Issues to fix:
 
@@ -30,11 +31,13 @@ section 5.
 
 optional, required for california
 
-Technologies Used:
+<div>
 
-1. Chart.js Plugin: is a JavaScript library that allows developers to create beautiful, interactive charts and graphs in web applications. It provides a straightforward way to visualize data using various chart types, such as line charts, bar charts, pie charts, and more.
+<h2>Technologies Used:</h2>
 
-A. Key Features
+<h3>1. Chart.js Plugin: is a JavaScript library that allows developers to create beautiful, interactive charts and graphs in web applications. It provides a straightforward way to visualize data using various chart types, such as line charts, bar charts, pie charts, and more.</h3>
+
+<h4>A. Key Features
 Simple and Flexible: Chart.js is designed to be simple to use, but it also offers extensive customization options for advanced users.
 Responsive Design: Charts are responsive and adapt to different screen sizes, ensuring a great user experience across devices.
 Interactive Elements: Provides interactive features like tooltips, legends, and hover effects.
@@ -62,4 +65,8 @@ P. LineElement: Represents lines in line charts.
 Q. PointElement: Represents data points in scatter or line charts.
 R. Plugins: Extend the functionality of Chart.js with additional features or customizations, such as annotations or data labels.
 
-Install: npm install chart.js
+</h4>
+
+<h5>Install: npm install chart.js</h5>
+
+</div>

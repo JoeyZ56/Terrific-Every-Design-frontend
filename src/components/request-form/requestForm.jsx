@@ -61,7 +61,7 @@ const RequestForm = () => {
     priority24Hours: false,
     priority48Hours: false,
     //part seven
-    fileUpLoad: null,
+    fileUpload: [],
   });
 
   const handleChange = (e) => {
@@ -69,7 +69,7 @@ const RequestForm = () => {
   };
 
   const handleFileChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.files[0] });
+    setFormData({ ...formData, [e.target.name]: Array.from(e.target.files) }); //[0] to get the first file
   };
 
   const handleCheckboxChange = (e) => {
@@ -89,18 +89,25 @@ const RequestForm = () => {
     e.preventDefault();
     setLoading(true);
 
+    const data = new FormData();
+    for (const key in formData) {
+      if (key === "fileUpload") {
+        formData.key.forEach((file) => {
+          data.append("fileUpload", file);
+        });
+      } else {
+        data.append(key, formData[key]);
+      }
+    }
+
     console.log("Submitting form data:", formData);
 
     try {
-      await axios.post(
-        "http://localhost:5000/requests/submit-request",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      await axios.post("http://localhost:5000/requests/submit-request", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       alert("Form submitted successfully!");
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -121,6 +128,8 @@ const RequestForm = () => {
             color={"#bbb"}
             loading={loading}
             size={150}
+            width={500}
+            height={500}
             className="loading-spinner"
           />
         </div>
