@@ -33,6 +33,7 @@ const RequestForm = () => {
     inverterManufacturer: "",
     numberOfInverters: "",
     sizeOfInverter: "",
+    electricityType: "",
     systemSize: "",
     //part three
     meterLocation: "",

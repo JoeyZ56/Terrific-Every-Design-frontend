@@ -97,6 +97,20 @@ button:hover {
   background-color: #0056b3;
 }
 
+.electricity-type-container {
+  flex: 1;
+}
+
+.size-of-inverter {
+  width: 400px;
+  margin-right: 8px;
+}
+
+.electricity-type {
+  width: 70px;
+  height: 40px;
+}
+
 /*Checkbox */
 
 .checkbox-container {

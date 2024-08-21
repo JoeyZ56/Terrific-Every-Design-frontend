@@ -64,18 +64,30 @@ const SectionTwo = ({ formData, handleChange }) => {
           onChange={handleChange}
         />
       </label>
-      <label>
-        Size of Inverter (W) / (VA)
-        <input
-          type="text"
-          placeholder="Enter Size... (W) / (VA)"
-          name="sizeOfInverter"
-          className="form-info"
-          value={formData.sizeOfInverter}
+      <div className="electricity-type-container">
+        <label>
+          Size of Inverter (W) / (VA)
+          <input
+            type="text"
+            placeholder="Enter Size... (W) / (VA)"
+            name="sizeOfInverter"
+            className="form-info size-of-inverter"
+            value={formData.sizeOfInverter}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <select
+          placeholder="Type..."
+          name="electricityType"
+          className="form-info electricity-type"
+          value={formData.electricityType}
           onChange={handleChange}
-          required
-        />
-      </label>
+        >
+          <option value="w">W</option>
+          <option value="va">VA</option>
+        </select>
+      </div>
       <label>
         System Size (W)
         <input
@@ -99,6 +111,7 @@ SectionTwo.propTypes = {
     numberOfModules: propTypes.string,
     inverterManufacturer: propTypes.string,
     numberOfInverters: propTypes.string,
+    electricityType: propTypes.string,
     sizeOfInverter: propTypes.string,
     systemSize: propTypes.string,
   }).isRequired,
