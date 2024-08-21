@@ -62,7 +62,7 @@ const RequestForm = () => {
     priority24Hours: false,
     priority48Hours: false,
     //part seven
-    fileUpload: [],
+    fileUpload: null,
   });
 
   const handleChange = (e) => {
@@ -70,12 +70,10 @@ const RequestForm = () => {
   };
 
   const handleFileChange = (e) => {
+    const files = Array.from(e.target.files);
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.name]: [
-        ...(prevState[e.target.name] || []),
-        ...Array.from(e.target.files),
-      ],
+      fileUpload: [...(prevState.fileUpload || []), ...files],
     }));
   };
 

@@ -69,7 +69,7 @@ const SectionTwo = ({ formData, handleChange }) => {
           Size of Inverter (W) / (VA)
           <input
             type="text"
-            placeholder="Enter Size... (W) / (VA)"
+            placeholder="Enter Size... "
             name="sizeOfInverter"
             className="form-info size-of-inverter"
             value={formData.sizeOfInverter}
@@ -78,12 +78,14 @@ const SectionTwo = ({ formData, handleChange }) => {
           />
         </label>
         <select
-          placeholder="Type..."
+          placeholder=""
           name="electricityType"
           className="form-info electricity-type"
           value={formData.electricityType}
           onChange={handleChange}
+          required
         >
+          <option value=""></option>
           <option value="w">W</option>
           <option value="va">VA</option>
         </select>
