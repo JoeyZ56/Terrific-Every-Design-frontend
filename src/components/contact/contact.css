@@ -4,7 +4,6 @@
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
-  /* background-color: rgba(0, 0, 0, 0.5); */
   background-color: #fff;
   width: 50%;
   margin: 0 auto;
@@ -33,6 +32,11 @@
   background-color: #fff;
   margin-bottom: 10px;
 }
+
+.motion-div:hover {
+  background-color: #f8f9fa;
+}
+
 .links {
   color: #111;
   text-decoration: none;
