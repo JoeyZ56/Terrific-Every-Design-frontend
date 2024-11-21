@@ -109,7 +109,8 @@ const RequestForm = () => {
     console.log("Submitting form data:", formData);
 
     try {
-      await axios.post("http://localhost:5000/requests/submit-request", data, {
+      const apiKey = import.meta.env.VITE_API_KEY;
+      await axios.post(`${apiKey}/requests/submit-request`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
