@@ -3,12 +3,13 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   background-color: rgba(0, 0, 0, 0.5);
 }
 .title-container {
   display: flex;
   align-items: center;
+  margin-left: 15px;
 }
 .title {
   color: #fff;
@@ -17,13 +18,9 @@
 .nav-links {
   color: #fff;
   text-decoration: none;
-  margin-left: 20px;
-
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* flex-direction: row; */
+  margin-right: 10px;
 }
+
 .nav-links:hover {
   color: #d6d7d8;
 }
