@@ -127,7 +127,7 @@ const sectionSix = ({ formData, setFormData }) => {
                 })
               }
             />
-            Priority (within 24 hours) standard price
+            Priority (within 24 hours) extra $25
           </label>
           <label>
             <input
