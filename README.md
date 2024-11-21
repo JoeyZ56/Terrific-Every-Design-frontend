@@ -79,6 +79,8 @@
 
 ##### Future Development
 
+    - Make Website moble frendly
+
     - Add subtotal section for accumulated price
 
     - AI virtual assistant
