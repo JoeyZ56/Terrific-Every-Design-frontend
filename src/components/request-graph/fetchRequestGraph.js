@@ -1,6 +1,12 @@
 const fetchRequestData = async ({ setChartData, setData }) => {
+  const apiKey = import.meta.env.VITE_API_KEY;
+
+  if (!apiKey) {
+    return console.error("Error getting API URL from .env");
+  }
+
   try {
-    const res = await fetch("http://localhost:5000/requests/get-requests");
+    const res = await fetch(`${apiKey}/requests/get-requests`);
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status}`);
     }
