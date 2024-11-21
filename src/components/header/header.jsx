@@ -10,7 +10,7 @@ const header = () => {
         alt="profile-image"
         className="header-image"
       /> */}
-      <h3 className="header-slogan">Crafting Precision for Solar Success</h3>
+      <h2 className="header-slogan">Crafting Precision for Solar Success</h2>
     </div>
   );
 };
