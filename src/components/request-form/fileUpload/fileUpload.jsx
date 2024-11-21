@@ -5,12 +5,13 @@ import "./fileUpload.css";
 const FileUpload = ({ handleFileChange }) => {
   const [fileInputs, setFileInputs] = useState([{ id: 1 }]);
 
+  // file limit handler
   const addFileInput = () => {
     if (fileInputs.length < 10) {
       setFileInputs([...fileInputs, { id: fileInputs.length + 1 }]);
     }
   };
-
+  // handler for checking if file is selected
   const handleInputChange = (e, index) => {
     handleFileChange(e);
     if (e.target.files.length > 0 && index === fileInputs.length - 1) {
