@@ -115,7 +115,11 @@ const RequestForm = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      alert("Form submitted successfully!");
+      alert(
+        "Your form submitted successfully! Thank you for choosing Terific Every Design. Our team will contact you shortly."
+      );
+      //returns to home page after alert has been clicked
+      window.location.href = "/";
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Oops! Error submitting form! Contact directly to make a request!");
@@ -130,7 +134,7 @@ const RequestForm = () => {
         Back
       </Link>
       {loading ? (
-        <div>
+        <div className="loading-spinner-container">
           <ClipLoader
             color={"#bbb"}
             loading={loading}
