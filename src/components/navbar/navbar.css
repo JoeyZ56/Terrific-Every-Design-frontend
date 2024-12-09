@@ -24,3 +24,15 @@
 .nav-links:hover {
   color: #d6d7d8;
 }
+
+@media screen and (max-width: 480px) {
+  .nav-container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    margin-right: 0px;
+  }
+}
