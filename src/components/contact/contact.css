@@ -57,3 +57,31 @@
 span {
   color: #111;
 }
+
+@media screen and (max-width: 480px) {
+  .main-contact-container {
+    width: 80%;
+  }
+  .link-container {
+    flex-direction: column;
+  }
+  .motion-div {
+    background-color: rgb(203, 205, 206);
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-contact-container {
+    width: 70%;
+  }
+  .link-container {
+    flex-direction: column;
+  }
+  .motion-div {
+    background-color: rgb(203, 205, 206);
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+}
