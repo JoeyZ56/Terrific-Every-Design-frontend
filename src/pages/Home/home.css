@@ -1,4 +1,12 @@
 .home-container {
-  background-image: url("https://wallpaperaccess.com/full/1663640.jpg") !important;
+  background-image: url("../../assets/backgrounds/solar.jpg") !important;
   background-size: cover;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home-container {
+    background-image: url("../../assets/backgrounds/solar.jpg") !important;
+    background-size: cover;
+    height: 100vh;
+  }
 }
