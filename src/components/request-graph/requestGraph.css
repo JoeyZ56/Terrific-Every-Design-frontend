@@ -38,10 +38,16 @@
   .main-graph-container {
     width: 80%;
   }
+  .chart-container {
+    height: 250px;
+  }
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .main-graph-container {
     width: 80%;
+  }
+  .chart-container {
+    height: 300px;
   }
 }
 
@@ -49,5 +55,8 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .main-graph-container {
     width: 80%;
+  }
+  .chart-container {
+    height: 350px;
   }
 }
