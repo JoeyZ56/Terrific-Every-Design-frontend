@@ -8,10 +8,9 @@ const contact = () => {
     <div className="main-contact-container" id="contact">
       <div className="contact-text-container">
         <h2 className="contact-text">
-          <span>Get started on crafting your solar dreams today!</span>
-          <br />
-          <span> Call or email us to get a quote!</span>
+          Get started on crafting your solar dreams today!
         </h2>
+        <h2 className="contact-text">Call or email us to get a quote!</h2>
       </div>
       <div className="link-container">
         <a href="mailto:terrificeverydesign@gmail.com" className="links">
