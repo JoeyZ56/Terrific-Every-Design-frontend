@@ -27,14 +27,22 @@
   gap: 1rem;
   border: 1px solid #5d5c5c;
   border-radius: 10%;
-  width: 210px;
+  width: 230px;
   padding: 10px;
-  background-color: #fff;
   margin-bottom: 10px;
+
+  background-color: rgb(203, 205, 206);
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .motion-div:hover {
   background-color: #f8f9fa;
+}
+
+.motion-div p {
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 
 .links {
@@ -49,39 +57,30 @@
 }
 
 .contact-text {
-  color: #fff;
   text-align: center;
-  margin-top: 20px;
 }
 
-span {
-  color: #111;
-}
-
-@media screen and (max-width: 480px) {
+/* Media Queries */
+@media (min-width: 375px) and (max-width: 478px) {
   .main-contact-container {
     width: 80%;
   }
   .link-container {
     flex-direction: column;
   }
-  .motion-div {
-    background-color: rgb(203, 205, 206);
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-contact-container {
+    width: 80%;
+  }
+  .link-container {
+    flex-direction: column;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .main-contact-container {
-    width: 70%;
-  }
-  .link-container {
-    flex-direction: column;
-  }
-  .motion-div {
-    background-color: rgb(203, 205, 206);
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
   }
 }
