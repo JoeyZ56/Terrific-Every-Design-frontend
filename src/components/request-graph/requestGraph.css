@@ -16,7 +16,7 @@
 
 .chart-container {
   width: 100%;
-  height: 400px;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -38,16 +38,10 @@
   .main-graph-container {
     width: 80%;
   }
-  .chart-container {
-    height: 250px;
-  }
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .main-graph-container {
     width: 80%;
-  }
-  .chart-container {
-    height: 300px;
   }
 }
 
@@ -55,8 +49,5 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .main-graph-container {
     width: 80%;
-  }
-  .chart-container {
-    height: 350px;
   }
 }
