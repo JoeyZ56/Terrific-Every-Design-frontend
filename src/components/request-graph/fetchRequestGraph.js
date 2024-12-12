@@ -6,7 +6,6 @@ const fetchRequestData = async ({ setChartData, setData }) => {
   }
 
   try {
-    console.log("apiKey:", JSON.stringify(apiKey));
     const res = await fetch(`${apiKey}/requests/get-requests`);
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status}`);
