@@ -32,12 +32,13 @@
 }
 
 /* Small Phones */
-@media (min-width: 360px) and (max-width: 480px) {
+@media (min-width: 344px) and (max-width: 480px) {
   .main-graph-container {
     width: 80%;
   }
-  canvas {
-    height: 100%;
+  .chart-container canvas {
+    display: block;
+    height: 70% !important;
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
