@@ -1,12 +1,17 @@
 .home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
   background-image: url("../../assets/backgrounds/solar.jpg") !important;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .home-container {
     background-image: url("../../assets/backgrounds/solar.jpg") !important;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
   }
 }
