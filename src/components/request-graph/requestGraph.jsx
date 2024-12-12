@@ -34,8 +34,6 @@ const RequestGraph = () => {
 
   return (
     <div className="main-graph-container">
-      {/* <h1>Request Graph</h1> */}
-
       <div className="number-of-requests">
         <h2>Total Requests: {data.length}</h2>
       </div>
