@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -9,7 +9,13 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Box, Typography, Card, CardContent } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  CircularProgress,
+} from "@mui/material";
 import ErrorBoundary from "../errorBoundary/errorBoundary";
 import fetchRequestData from "./fetchRequestGraph";
 
@@ -26,10 +32,15 @@ ChartJS.register(
 const RequestGraph = () => {
   const [data, setData] = useState([]);
   const [chartData, setChartData] = useState({});
-  const chartInstanceRef = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchRequestData({ setData, setChartData });
+    const fetchData = async () => {
+      setLoading(true);
+      await fetchRequestData({ setData, setChartData });
+      setLoading(false);
+    };
+    fetchData();
   }, []);
 
   return (
@@ -96,28 +107,75 @@ const RequestGraph = () => {
         </Typography>
       </Box>
 
-      {/* Chart Container */}
-      <Card sx={{ width: "100%", maxWidth: 800, padding: 2 }}>
-        <CardContent>
-          {chartData.labels && chartData.labels.length > 0 ? (
-            <Bar
-              data={chartData}
-              ref={(chartRef) => {
-                if (chartRef && chartRef.chartInstance) {
-                  chartInstanceRef.current = chartRef.chartInstance;
-                }
-              }}
-            />
-          ) : (
-            <Typography
-              variant="h6"
-              sx={{ textAlign: "center", color: "gray" }}
-            >
-              No data available to display
-            </Typography>
-          )}
-        </CardContent>
-      </Card>
+      {/* Show CircularProgress while loading */}
+      {loading ? (
+        <CircularProgress />
+      ) : (
+        <Card
+          sx={{
+            width: "100%",
+            maxWidth: 800,
+            padding: 2,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <CardContent
+            sx={{
+              width: {
+                xs: "90%",
+                sm: "90%",
+                md: "100%",
+              },
+              height: "auto", // Let content define the height
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {chartData.labels && chartData.labels.length > 0 ? (
+              <Box
+                sx={{
+                  width: "100%",
+                  maxWidth: 700,
+                  height: {
+                    xs: "350px", // Taller chart for mobile
+                    sm: "400px", // Slightly taller chart for tablets
+                    md: "450px", // Default chart height for larger screens
+                  },
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Bar
+                  data={chartData}
+                  options={{
+                    maintainAspectRatio: false, // Allows full control over chart height
+                    responsive: true,
+                  }}
+                  style={{
+                    width: "100%",
+                    height: "100%", // Ensures chart fills the Box
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                />
+              </Box>
+            ) : (
+              <Typography
+                variant="h6"
+                sx={{
+                  textAlign: "center",
+                  color: "black",
+                }}
+              >
+                No data available to display
+              </Typography>
+            )}
+          </CardContent>
+        </Card>
+      )}
     </Box>
   );
 };
