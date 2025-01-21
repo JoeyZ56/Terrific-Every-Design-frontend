@@ -8,21 +8,50 @@ const Contact = () => {
     <Box
       id="contact"
       sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 4,
+        padding: "1rem",
         backgroundColor: "#f5f5f5",
-        padding: "2rem",
         borderRadius: 2,
         boxShadow: 3,
-        textAlign: "center",
-        width: "90%",
+        width: {
+          xs: "95%", // 95% width on extra-small screens (mobile)
+          sm: "85%", // 85% width on small screens (tablets)
+          md: "70%", // 70% width on medium screens (laptops)
+        },
         maxWidth: "800px",
-        margin: "auto",
+        height: "100%",
+        maxHeight: "800px",
+        margin: "0 auto",
         marginTop: 2,
         overflowX: "hidden",
+        boxSizing: "border-box",
       }}
     >
       {/* Contact Text Section */}
-      <Box sx={{ marginBottom: "2rem" }}>
-        <Typography variant="h4" gutterBottom>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          width: "100%",
+        }}
+      >
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{
+            fontSize: {
+              xs: "1.5rem",
+              sm: "1.5rem",
+              md: "2rem",
+            },
+          }}
+        >
           Get started on crafting your solar dreams today!
         </Typography>
         <Typography variant="h5">Call or email us to get a quote!</Typography>

@@ -31,7 +31,13 @@ const fetchRequestData = async ({ setChartData, setData }) => {
           console.warn("Invalid date format: ", request.createdAt);
           return null;
         }
-        return date.toLocaleDateString();
+
+        //Formate data as MM/DD/YY
+        const formattedData = `${date.getMonth() + 1}/${date.getDate()}/${date
+          .getFullYear()
+          .toString()
+          .slice(-2)}`;
+        return formattedData;
       })
       .filter((date) => date !== null);
 

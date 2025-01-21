@@ -38,25 +38,63 @@ const RequestGraph = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: "center",
         gap: 4,
-        padding: 2, // Reduce padding for smaller screens
+        padding: "1rem",
         backgroundColor: "#f5f5f5",
         borderRadius: 2,
         boxShadow: 3,
-        width: "100%", // Ensure it takes full width of the parent
-        maxWidth: "800px", // Constrain to a reasonable size for larger screens
-        margin: "0 auto", // Center horizontally
+        width: {
+          xs: "95%", // 95% width on extra-small screens (mobile)
+          sm: "85%", // 85% width on small screens (tablets)
+          md: "70%", // 70% width on medium screens (laptops)
+        },
+        maxWidth: "800px",
+        height: "100%",
+        maxHeight: "800px",
+        margin: "0 auto",
         marginTop: 2,
-        overflowX: "hidden", // Prevent horizontal scrolling
+        overflowX: "hidden",
+        boxSizing: "border-box",
       }}
     >
-      <Typography variant="h4" gutterBottom>
-        Crafting Precision for Solar Success
-      </Typography>
-      {/* Total Requests */}
-      <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-        Total Requests: {data.length}
-      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          width: "100%",
+        }}
+      >
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{
+            fontSize: {
+              xs: "1.5rem",
+              sm: "1.5rem",
+              md: "2rem",
+            },
+          }}
+        >
+          Crafting Precision for Solar Success
+        </Typography>
+        {/* Total Requests */}
+        <Typography
+          variant="h5"
+          sx={{
+            fontWeight: "bold",
+            fontSize: {
+              xs: "1rem",
+              sm: "1rem",
+              md: "1.5rem",
+            },
+          }}
+        >
+          Total Requests: {data.length}
+        </Typography>
+      </Box>
 
       {/* Chart Container */}
       <Card sx={{ width: "100%", maxWidth: 800, padding: 2 }}>
