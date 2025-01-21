@@ -12,6 +12,7 @@ import SectionFour from "./formSections/sectionFour";
 import SectionFive from "./formSections/sectionFive";
 import SectionSix from "./formSections/sectionSix";
 import FileUpload from "./fileUpload/fileUpload";
+import HamburgerMenu from "../menu/hamburgerMenu";
 
 const RequestForm = () => {
   const [loading, setLoading] = useState(false);
@@ -129,56 +130,59 @@ const RequestForm = () => {
   };
 
   return (
-    <div className="main-container">
-      <Link to="/" className="back-button">
-        Back
-      </Link>
-      {loading ? (
-        <div className="loading-spinner-container">
-          <ClipLoader
-            color={"#bbb"}
-            loading={loading}
-            size={150}
-            width={500}
-            height={500}
-            className="loading-spinner"
-          />
-        </div>
-      ) : (
-        <>
-          <h1>Request Form</h1>
-          <form className="form-container" onSubmit={handleSubmit}>
-            <SectionOne formData={formData} handleChange={handleChange} />
-            <SectionTwo formData={formData} handleChange={handleChange} />
-            <SectionThree
-              formData={formData}
-              handleChange={handleChange}
-              setFormData={setFormData}
+    <>
+      <HamburgerMenu />
+      <div className="main-container">
+        <Link to="/" className="back-button">
+          Back
+        </Link>
+        {loading ? (
+          <div className="loading-spinner-container">
+            <ClipLoader
+              color={"#bbb"}
+              loading={loading}
+              size={150}
+              width={500}
+              height={500}
+              className="loading-spinner"
             />
-            <SectionFour
-              formData={formData}
-              handleChange={handleChange}
-              handleCheckboxChange={handleCheckboxChange}
-            />
-            <SectionFive formData={formData} handleChange={handleChange} />
-            <SectionSix
-              formData={formData}
-              handleChange={handleChange}
-              setFormData={setFormData}
-            />
+          </div>
+        ) : (
+          <>
+            <h1>Request Form</h1>
+            <form className="form-container" onSubmit={handleSubmit}>
+              <SectionOne formData={formData} handleChange={handleChange} />
+              <SectionTwo formData={formData} handleChange={handleChange} />
+              <SectionThree
+                formData={formData}
+                handleChange={handleChange}
+                setFormData={setFormData}
+              />
+              <SectionFour
+                formData={formData}
+                handleChange={handleChange}
+                handleCheckboxChange={handleCheckboxChange}
+              />
+              <SectionFive formData={formData} handleChange={handleChange} />
+              <SectionSix
+                formData={formData}
+                handleChange={handleChange}
+                setFormData={setFormData}
+              />
 
-            <FileUpload
-              formData={formData}
-              handleFileChange={handleFileChange}
-            />
+              <FileUpload
+                formData={formData}
+                handleFileChange={handleFileChange}
+              />
 
-            <button type="submit" className="submit-button">
-              Submit Request
-            </button>
-          </form>
-        </>
-      )}
-    </div>
+              <button type="submit" className="submit-button">
+                Submit Request
+              </button>
+            </form>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

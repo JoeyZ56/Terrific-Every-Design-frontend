@@ -9,9 +9,9 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { Box, Typography, Card, CardContent } from "@mui/material";
 import ErrorBoundary from "../errorBoundary/errorBoundary";
 import fetchRequestData from "./fetchRequestGraph";
-import "./requestGraph.css";
 
 // Register the chart.js plugins
 ChartJS.register(
@@ -33,25 +33,54 @@ const RequestGraph = () => {
   }, []);
 
   return (
-    <div className="main-graph-container">
-      <div className="number-of-requests">
-        <h2>Total Requests: {data.length}</h2>
-      </div>
-      <div className="chart-container">
-        {chartData.labels && chartData.labels.length > 0 ? (
-          <Bar
-            data={chartData}
-            ref={(chartRef) => {
-              if (chartRef && chartRef.chartInstance) {
-                chartInstanceRef.current = chartRef.chartInstance;
-              }
-            }}
-          />
-        ) : (
-          <h2 className="no-data-message">No data available to display</h2>
-        )}
-      </div>
-    </div>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 4,
+        padding: 2, // Reduce padding for smaller screens
+        backgroundColor: "#f5f5f5",
+        borderRadius: 2,
+        boxShadow: 3,
+        width: "100%", // Ensure it takes full width of the parent
+        maxWidth: "800px", // Constrain to a reasonable size for larger screens
+        margin: "0 auto", // Center horizontally
+        marginTop: 2,
+        overflowX: "hidden", // Prevent horizontal scrolling
+      }}
+    >
+      <Typography variant="h4" gutterBottom>
+        Crafting Precision for Solar Success
+      </Typography>
+      {/* Total Requests */}
+      <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+        Total Requests: {data.length}
+      </Typography>
+
+      {/* Chart Container */}
+      <Card sx={{ width: "100%", maxWidth: 800, padding: 2 }}>
+        <CardContent>
+          {chartData.labels && chartData.labels.length > 0 ? (
+            <Bar
+              data={chartData}
+              ref={(chartRef) => {
+                if (chartRef && chartRef.chartInstance) {
+                  chartInstanceRef.current = chartRef.chartInstance;
+                }
+              }}
+            />
+          ) : (
+            <Typography
+              variant="h6"
+              sx={{ textAlign: "center", color: "gray" }}
+            >
+              No data available to display
+            </Typography>
+          )}
+        </CardContent>
+      </Card>
+    </Box>
   );
 };
 
@@ -59,7 +88,17 @@ function RequestGraphWithErrorBoundary(props) {
   return (
     <ErrorBoundary
       fallbackComponent={
-        <h2 className="error-boundary-message">Visual Graph is down...</h2>
+        <Typography
+          variant="h6"
+          sx={{
+            textAlign: "center",
+            color: "red",
+            fontWeight: "bold",
+            marginTop: 4,
+          }}
+        >
+          Visual Graph is down...
+        </Typography>
       }
     >
       <RequestGraph {...props} />

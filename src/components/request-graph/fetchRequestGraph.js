@@ -48,14 +48,15 @@ const fetchRequestData = async ({ setChartData, setData }) => {
     const labels = Object.keys(dateCounts);
     const counts = Object.values(dateCounts);
 
+    //Chart Data Design
     setChartData({
       labels,
       datasets: [
         {
           label: "Requests",
           data: counts,
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          borderColor: "rgba(75, 192, 192, 1)",
+          backgroundColor: "rgba(92, 107, 192, 0.60)",
+          borderColor: "#5C6BC0",
           borderWidth: 1,
         },
       ],

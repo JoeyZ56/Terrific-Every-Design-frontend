@@ -88,3 +88,17 @@
 ##### Link To Backend
 
     - https://github.com/JoeyZ56/Terrific-Every-Design-backend
+
+### Future Fixes:
+
+    - Reload on form page causes a 404 error to occur. I plan on fixing this to allow a seemless refresh without causing the error to interupt user experiences.
+
+### Material UI
+
+Color: Muted Earthy Pair
+
+• Orange: Burnt Orange (#FF7043)
+A warm, muted orange that feels natural and grounded.
+
+• Blue: Deep Slate Blue (#5C6BC0)
+A soft, calm blue that complements the orange without being too bold.
