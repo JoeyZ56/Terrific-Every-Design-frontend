@@ -1,149 +1,194 @@
-import propTypes from "prop-types";
-import "../requestForm.css";
+import PropTypes from "prop-types";
+import {
+  TextField,
+  Switch,
+  FormControlLabel,
+  Box,
+  Typography,
+  Grid,
+} from "@mui/material";
 
 const SectionThree = ({ formData, handleChange, setFormData }) => {
-  return (
-    <div className="form-container-info part-three">
-      <h3>3. Electrical Service</h3>
-      <label>
-        Location of Meter & Panel
-        <input
-          type="text"
-          placeholder="Location..."
-          name="meterLocation"
-          className="form-info"
-          value={formData.meterLocation}
-          onChange={handleChange}
-          required
-        />
-      </label>
-      <label>
-        Existing M.S.P. Manufacturer
-        <input
-          type="text"
-          placeholder="Enter Existing M.S.P.... (optional)"
-          name="mspManufacturer"
-          className="form-info"
-          value={formData.mspManufacturer}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        M.S.P. Bus Rate
-        <input
-          type="text"
-          placeholder="Enter Bus Rate..."
-          name="mspBuzzRate"
-          className="form-info"
-          value={formData.mspBuzzRate}
-          onChange={handleChange}
-          required
-        />
-      </label>
-      <label>
-        Main Breaker Size
-        <input
-          type="text"
-          placeholder="Enter Breaker Size..."
-          name="mainBreakerSize"
-          className="form-info"
-          value={formData.mainBreakerSize}
-          onChange={handleChange}
-          required
-        />
-      </label>
-      <div className="checkbox-container">
-        <div className="checkbox-group">
-          <div className="checkbox-header">
-            <h5>M.P.U.</h5>
-          </div>
-          <div className="checkbox-items">
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                name="mpu"
-                checked={formData.mpu}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    mpu: e.target.checked,
-                  })
-                }
-              />
-              Yes
-            </label>
+  const handleSwitchChange = (field) => (event) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: event.target.checked, // Toggle true/false
+    }));
+  };
 
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2, padding: 3 }}>
+      <Typography variant="h6" gutterBottom>
+        3. Electrical Service
+      </Typography>
+
+      <TextField
+        label="Location of Meter & Panel"
+        placeholder="Location..."
+        name="meterLocation"
+        value={formData.meterLocation}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Existing M.S.P. Manufacturer"
+        placeholder="Enter Existing M.S.P.... (optional)"
+        name="mspManufacturer"
+        value={formData.mspManufacturer}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="M.S.P. Bus Rate"
+        placeholder="Enter Bus Rate..."
+        name="mspBuzzRate"
+        value={formData.mspBuzzRate}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Main Breaker Size"
+        placeholder="Enter Breaker Size..."
+        name="mainBreakerSize"
+        value={formData.mainBreakerSize}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={6}>
+          <Typography variant="h6">MPU</Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={formData.mpu}
+                onChange={handleSwitchChange("mpu")}
                 name="mpu"
-                checked={!formData.mpu}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    mpu: !e.target.checked,
-                  })
-                }
+                sx={{
+                  "& .MuiSwitch-switchBase.Mui-checked": {
+                    color: "#FF7043", // Thumb color when checked
+                  },
+                  "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+                    backgroundColor: "#FF7043", // Track color when checked
+                  },
+                  "& .MuiSwitch-track": {
+                    backgroundColor: "#ccc", // Track color when unchecked
+                  },
+                }}
               />
-              No
-            </label>
-          </div>
-        </div>
-        <div className="checkbox-group">
-          <div className="checkbox-header">
-            <h5>De Rate</h5>
-          </div>
-          <div className="checkbox-items">
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                name="deRate"
+            }
+            label={formData.mpu ? "Yes" : "No"}
+          />
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={6}>
+          <Typography variant="h6">De Rate</Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <FormControlLabel
+            control={
+              <Switch
                 checked={formData.deRate}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    deRate: e.target.checked,
-                  })
-                }
-              />
-              Yes
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
+                onChange={handleSwitchChange("deRate")}
                 name="deRate"
-                checked={!formData.deRate}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    deRate: !e.target.checked,
-                  })
-                }
+                sx={{
+                  "& .MuiSwitch-switchBase.Mui-checked": {
+                    color: "#FF7043",
+                  },
+                  "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track": {
+                    backgroundColor: "#FF7043",
+                  },
+                  "& .MuiSwitch-track": {
+                    backgroundColor: "#ccc",
+                  },
+                }}
               />
-              No
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
+            }
+            label={formData.deRate ? "Yes" : "No"}
+          />
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 
 SectionThree.propTypes = {
-  formData: propTypes.shape({
-    meterLocation: propTypes.string,
-    mspManufacturer: propTypes.string,
-    mspBuzzRate: propTypes.string,
-    mainBreakerSize: propTypes.string,
-    mpu: propTypes.bool,
-    deRate: propTypes.bool,
+  formData: PropTypes.shape({
+    meterLocation: PropTypes.string.isRequired,
+    mspManufacturer: PropTypes.string,
+    mspBuzzRate: PropTypes.string.isRequired,
+    mainBreakerSize: PropTypes.string.isRequired,
+    mpu: PropTypes.bool.isRequired,
+    deRate: PropTypes.bool.isRequired,
   }).isRequired,
-  handleChange: propTypes.func.isRequired,
-  setFormData: propTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  setFormData: PropTypes.func.isRequired,
 };
 
 export default SectionThree;

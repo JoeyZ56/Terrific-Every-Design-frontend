@@ -58,13 +58,13 @@ const RequestGraph = () => {
         width: {
           xs: "95%", // 95% width on extra-small screens (mobile)
           sm: "85%", // 85% width on small screens (tablets)
-          md: "70%", // 70% width on medium screens (laptops)
+          md: "90%", // 70% width on medium screens (laptops)
         },
         maxWidth: "800px",
         height: "100%",
         maxHeight: "800px",
         margin: "0 auto",
-        marginTop: 2,
+        marginTop: 10,
         overflowX: "hidden",
         boxSizing: "border-box",
       }}

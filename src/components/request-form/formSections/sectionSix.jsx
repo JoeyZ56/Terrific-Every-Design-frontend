@@ -1,167 +1,212 @@
-import propTypes from "prop-types";
-import "../requestForm.css";
+import PropTypes from "prop-types";
+import {
+  Box,
+  Typography,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+} from "@mui/material";
 
-const sectionSix = ({ formData, setFormData }) => {
+const SectionSix = ({ formData, setFormData }) => {
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: checked,
+    }));
+  };
+
   return (
-    <div className="form-container-info part-six">
-      <h3>6. Special Request & Priority</h3>
-      <div className="checkbox-group">
-        <div className="checkbox-header">
-          <h6>Special Request</h6>{" "}
-        </div>
-        <div className="checkbox-items">
-          <label>
-            <input
-              type="checkbox"
-              className="checkbox-input"
-              name="electricalEngineeringReport"
-              checked={formData.electricalEngineeringReport}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  electricalEngineeringReport: e.target.checked,
-                })
-              }
-            />
-            Electrical Engineering Report
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              className="checkbox-input"
-              name="structuralEngineeringReport"
-              checked={formData.structuralEngineeringReport}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  structuralEngineeringReport: e.target.checked,
-                })
-              }
-            />
-            Structural Engineering Report
-          </label>
-        </div>
-        <div className="checkbox-group">
-          <div className="checkbox-header">
-            <h6>Design Type</h6>
-          </div>
-          <div className="checkbox-items">
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 3, padding: 3 }}>
+      <Typography variant="h6" gutterBottom>
+        6. Special Request & Priority
+      </Typography>
+
+      <Box>
+        <Typography variant="subtitle1">Special Request</Typography>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                name="electricalEngineeringReport"
+                checked={formData.electricalEngineeringReport}
+                onChange={handleCheckboxChange}
+                sx={{
+                  color: "rgba(77, 77, 77, 0.4)",
+                  "&.Mui-checked": {
+                    color: "#5C6BC0",
+                  },
+                  "&:hover": {
+                    backgroundColor: "rgba(92, 107, 192, 0.15)",
+                  },
+                }}
+              />
+            }
+            label="Electrical Engineering Report"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                name="structuralEngineeringReport"
+                checked={formData.structuralEngineeringReport}
+                onChange={handleCheckboxChange}
+                sx={{
+                  color: "rgba(77, 77, 77, 0.4)",
+                  "&.Mui-checked": {
+                    color: "#5C6BC0",
+                  },
+                  "&:hover": {
+                    backgroundColor: "rgba(92, 107, 192, 0.15)",
+                  },
+                }}
+              />
+            }
+            label="Structural Engineering Report"
+          />
+        </FormGroup>
+      </Box>
+
+      <Box>
+        <Typography variant="subtitle1">Design Type</Typography>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
                 name="designTypeRegular"
                 checked={formData.designTypeRegular}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    designTypeRegular: e.target.checked,
-                  })
-                }
+                onChange={handleCheckboxChange}
+                sx={{
+                  color: "rgba(77, 77, 77, 0.4)",
+                  "&.Mui-checked": {
+                    color: "#5C6BC0",
+                  },
+                  "&:hover": {
+                    backgroundColor: "rgba(92, 107, 192, 0.15)",
+                  },
+                }}
               />
-              Regular
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
+            }
+            label="Regular"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
                 name="designTypeBattery"
                 checked={formData.designTypeBattery}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    designTypeBattery: e.target.checked,
-                  })
-                }
+                onChange={handleCheckboxChange}
+                sx={{
+                  color: "rgba(77, 77, 77, 0.4)",
+                  "&.Mui-checked": {
+                    color: "#5C6BC0",
+                  },
+                  "&:hover": {
+                    backgroundColor: "rgba(92, 107, 192, 0.15)",
+                  },
+                }}
               />
-              Battery
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
+            }
+            label="Battery"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
                 name="designTypeCommercial"
                 checked={formData.designTypeCommercial}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    designTypeCommercial: e.target.checked,
-                  })
-                }
+                onChange={handleCheckboxChange}
+                sx={{
+                  color: "rgba(77, 77, 77, 0.4)",
+                  "&.Mui-checked": {
+                    color: "#5C6BC0",
+                  },
+                  "&:hover": {
+                    backgroundColor: "rgba(92, 107, 192, 0.15)",
+                  },
+                }}
               />
-              Commercial
-            </label>
-          </div>
-        </div>
-      </div>
-      <div className="checkbox-group">
-        <div className="checkbox-header">
-          <h6>Priority</h6>
-        </div>
-        <div className="checkbox-items">
-          <label>
-            <input
-              type="checkbox"
-              className="checkbox-input"
-              name="priorityUrgent"
-              checked={formData.priorityUrgent}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  priorityUrgent: e.target.checked,
-                })
-              }
-            />
-            Urgent (6 - 12 Hours) extra $50
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              className="checkbox-input"
-              name="priority24Hours"
-              checked={formData.priority24Hours}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  priority24Hours: e.target.checked,
-                })
-              }
-            />
-            Priority (within 24 hours) extra $25
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              className="checkbox-input"
-              name="priority48Hours"
-              checked={formData.priority48Hours}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  priority48Hours: e.target.checked,
-                })
-              }
-            />
-            Standard (within 48 hours) standard price
-          </label>
-        </div>
-      </div>
-    </div>
+            }
+            label="Commercial"
+          />
+        </FormGroup>
+      </Box>
+
+      <Box>
+        <Typography variant="subtitle1">Priority</Typography>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                name="priorityUrgent"
+                checked={formData.priorityUrgent}
+                onChange={handleCheckboxChange}
+                sx={{
+                  color: "rgba(77, 77, 77, 0.4)",
+                  "&.Mui-checked": {
+                    color: "#5C6BC0",
+                  },
+                  "&:hover": {
+                    backgroundColor: "rgba(92, 107, 192, 0.15)",
+                  },
+                }}
+              />
+            }
+            label="Urgent (6 - 12 Hours) extra $50"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                name="priority24Hours"
+                checked={formData.priority24Hours}
+                onChange={handleCheckboxChange}
+                sx={{
+                  color: "rgba(77, 77, 77, 0.4)",
+                  "&.Mui-checked": {
+                    color: "#5C6BC0",
+                  },
+                  "&:hover": {
+                    backgroundColor: "rgba(92, 107, 192, 0.15)",
+                  },
+                }}
+              />
+            }
+            label="Priority (within 24 hours) extra $25"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                name="priority48Hours"
+                checked={formData.priority48Hours}
+                onChange={handleCheckboxChange}
+                sx={{
+                  color: "rgba(77, 77, 77, 0.4)",
+                  "&.Mui-checked": {
+                    color: "#5C6BC0",
+                  },
+                  "&:hover": {
+                    backgroundColor: "rgba(92, 107, 192, 0.15)",
+                  },
+                }}
+              />
+            }
+            label="Standard (within 48 hours) standard price"
+          />
+        </FormGroup>
+      </Box>
+    </Box>
   );
 };
 
-sectionSix.propTypes = {
-  formData: propTypes.shape({
-    electricalEngineeringReport: propTypes.bool,
-    structuralEngineeringReport: propTypes.bool,
-    designTypeRegular: propTypes.bool,
-    designTypeBattery: propTypes.bool,
-    designTypeCommercial: propTypes.bool,
-    priorityUrgent: propTypes.bool,
-    priority24Hours: propTypes.bool,
-    priority48Hours: propTypes.bool,
+SectionSix.propTypes = {
+  formData: PropTypes.shape({
+    electricalEngineeringReport: PropTypes.bool,
+    structuralEngineeringReport: PropTypes.bool,
+    designTypeRegular: PropTypes.bool,
+    designTypeBattery: PropTypes.bool,
+    designTypeCommercial: PropTypes.bool,
+    priorityUrgent: PropTypes.bool,
+    priority24Hours: PropTypes.bool,
+    priority48Hours: PropTypes.bool,
   }).isRequired,
-  setFormData: propTypes.func.isRequired,
+  setFormData: PropTypes.func.isRequired,
 };
 
-export default sectionSix;
+export default SectionSix;

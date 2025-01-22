@@ -1,8 +1,14 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import { ClipLoader } from "react-spinners";
-import "./requestForm.css";
+import {
+  Box,
+  Typography,
+  Button,
+  CircularProgress,
+  Paper,
+  Container,
+} from "@mui/material";
+import Footer from "../footer/Footer";
 
 //form sections
 import SectionOne from "./formSections/sectionOne";
@@ -119,7 +125,7 @@ const RequestForm = () => {
       alert(
         "Your form submitted successfully! Thank you for choosing Terific Every Design. Our team will contact you shortly."
       );
-      //returns to home page after alert has been clicked
+      // returns to home page after alert has been clicked
       window.location.href = "/";
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -130,27 +136,42 @@ const RequestForm = () => {
   };
 
   return (
-    <>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh", // Ensure the entire viewport is used
+        overflow: "hidden",
+        marginTop: 10,
+      }}
+    >
       <HamburgerMenu />
-      <div className="main-container">
-        <Link to="/" className="back-button">
-          Back
-        </Link>
+
+      <Container
+        maxWidth="md"
+        sx={{
+          flex: 1, // Push the footer down
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: loading ? "center" : "flex-start",
+          alignItems: "center",
+        }}
+      >
         {loading ? (
-          <div className="loading-spinner-container">
-            <ClipLoader
-              color={"#bbb"}
-              loading={loading}
-              size={150}
-              width={500}
-              height={500}
-              className="loading-spinner"
-            />
-          </div>
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <CircularProgress size={120} sx={{ color: "#FF7043" }} />
+          </Box>
         ) : (
-          <>
-            <h1>Request Form</h1>
-            <form className="form-container" onSubmit={handleSubmit}>
+          <Paper elevation={3} sx={{ padding: 4, width: "100%" }}>
+            <Typography
+              variant="h4"
+              gutterBottom
+              align="center"
+              sx={{ fontSize: { xs: "1.5rem", sm: "1.5rem", md: "2rem" } }}
+            >
+              Service Request Form
+            </Typography>
+            <form onSubmit={handleSubmit}>
               <SectionOne formData={formData} handleChange={handleChange} />
               <SectionTwo formData={formData} handleChange={handleChange} />
               <SectionThree
@@ -169,20 +190,30 @@ const RequestForm = () => {
                 handleChange={handleChange}
                 setFormData={setFormData}
               />
+              <FileUpload handleFileChange={handleFileChange} />
 
-              <FileUpload
-                formData={formData}
-                handleFileChange={handleFileChange}
-              />
-
-              <button type="submit" className="submit-button">
-                Submit Request
-              </button>
+              <Box sx={{ marginTop: 3, textAlign: "center" }}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  sx={{
+                    backgroundColor: "#5C6BC0",
+                    "&:hover": { backgroundColor: "#3F51B5" },
+                  }}
+                  fullWidth
+                  disabled={loading}
+                >
+                  Submit Request
+                </Button>
+              </Box>
             </form>
-          </>
+          </Paper>
         )}
-      </div>
-    </>
+      </Container>
+
+      <Footer />
+    </Box>
   );
 };
 

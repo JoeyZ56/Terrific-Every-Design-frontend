@@ -1,123 +1,225 @@
-import propTypes from "prop-types";
-import "../requestForm.css";
+import PropTypes from "prop-types";
+import { TextField, MenuItem, Box, Typography } from "@mui/material";
 
 const SectionTwo = ({ formData, handleChange }) => {
   return (
-    <div className="form-container-info part-two">
-      <h3>2. Equipment To Be Used</h3>
-      <label>
-        Module Number
-        <input
-          type="text"
-          placeholder="Enter Module..."
-          name="equipment"
-          className="form-info"
-          value={formData.equipment}
-          onChange={handleChange}
-          required
-        />
-      </label>
-      <label>
-        Module Size
-        <input
-          type="text"
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 2, padding: 3 }}>
+      <Typography variant="h6" gutterBottom>
+        2. Equipment To Be Used
+      </Typography>
+
+      <TextField
+        label="Module Number"
+        placeholder="Enter Module..."
+        name="equipment"
+        value={formData.equipment}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Module Size"
+        placeholder="Enter size..."
+        name="moduleSize"
+        value={formData.moduleSize}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Number of Modules"
+        placeholder="Enter Number..."
+        name="numberOfModules"
+        value={formData.numberOfModules}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Inverter Manufacturer"
+        placeholder="Enter inverter..."
+        name="inverterManufacturer"
+        value={formData.inverterManufacturer}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Number of Inverters"
+        placeholder="Enter Number... (optional)"
+        name="numberOfInverters"
+        value={formData.numberOfInverters}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <Box sx={{ display: "flex", gap: 2 }}>
+        <TextField
+          label="Size of Inverter (W/VA)"
           placeholder="Enter Size..."
-          name="moduleSize"
-          className="form-info"
-          value={formData.moduleSize}
+          name="sizeOfInverter"
+          value={formData.sizeOfInverter}
           onChange={handleChange}
+          fullWidth
+          variant="outlined"
           required
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
+                borderColor: "#5C6BC0",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#5C6BC0",
+              },
+            },
+            "& .MuiInputLabel-root.Mui-focused": {
+              color: "#5C6BC0",
+            },
+          }}
         />
-      </label>
-      <label>
-        Number of Modules
-        <input
-          type="text"
-          placeholder="Enter Number..."
-          name="numberOfModules"
-          className="form-info"
-          value={formData.numberOfModules}
-          onChange={handleChange}
-          required
-        />
-      </label>
-      <label>
-        Inverter Manufacturer
-        <input
-          type="text"
-          placeholder="Enter Inverter..."
-          name="inverterManufacturer"
-          className="form-info"
-          value={formData.inverterManufacturer}
-          onChange={handleChange}
-          required
-        />
-      </label>
-      <label>
-        Number of Inverters
-        <input
-          type="text"
-          placeholder="Enter Number... (optional)"
-          name="numberOfInverters"
-          className="form-info"
-          value={formData.numberOfInverters}
-          onChange={handleChange}
-        />
-      </label>
-      <div className="electricity-type-container">
-        <label>
-          Size of Inverter (W) / (VA)
-          <input
-            type="text"
-            placeholder="Enter Size... "
-            name="sizeOfInverter"
-            className="form-info size-of-inverter"
-            value={formData.sizeOfInverter}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <select
-          placeholder=""
+
+        <TextField
+          label="Electricity Type"
+          select
           name="electricityType"
-          className="form-info electricity-type"
           value={formData.electricityType}
           onChange={handleChange}
+          fullWidth
+          variant="outlined"
           required
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "&:hover fieldset": {
+                borderColor: "#5C6BC0",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#5C6BC0",
+              },
+            },
+            "& .MuiInputLabel-root.Mui-focused": {
+              color: "#5C6BC0",
+            },
+          }}
         >
-          <option value=""></option>
-          <option value="w">W</option>
-          <option value="va">VA</option>
-        </select>
-      </div>
-      <label>
-        System Size (W)
-        <input
-          type="text"
-          placeholder="Enter Size... (W)"
-          name="systemSize"
-          className="form-info"
-          value={formData.systemSize}
-          onChange={handleChange}
-          required
-        />
-      </label>
-    </div>
+          <MenuItem value="">Select Type</MenuItem>
+          <MenuItem value="W">W</MenuItem>
+          <MenuItem value="VA">VA</MenuItem>
+        </TextField>
+      </Box>
+
+      <TextField
+        label="System Size (W)"
+        placeholder="Enter size... (W)"
+        name="systemSize"
+        value={formData.systemSize}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+    </Box>
   );
 };
 
 SectionTwo.propTypes = {
-  formData: propTypes.shape({
-    equipment: propTypes.string,
-    moduleSize: propTypes.string,
-    numberOfModules: propTypes.string,
-    inverterManufacturer: propTypes.string,
-    numberOfInverters: propTypes.string,
-    electricityType: propTypes.string,
-    sizeOfInverter: propTypes.string,
-    systemSize: propTypes.string,
+  formData: PropTypes.shape({
+    equipment: PropTypes.string.isRequired,
+    moduleSize: PropTypes.string.isRequired,
+    numberOfModules: PropTypes.string.isRequired,
+    inverterManufacturer: PropTypes.string.isRequired,
+    numberOfInverters: PropTypes.string,
+    electricityType: PropTypes.string.isRequired,
+    sizeOfInverter: PropTypes.string.isRequired,
+    systemSize: PropTypes.string.isRequired,
   }).isRequired,
-  handleChange: propTypes.func,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default SectionTwo;

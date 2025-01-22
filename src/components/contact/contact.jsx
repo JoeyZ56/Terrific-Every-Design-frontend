@@ -20,7 +20,7 @@ const Contact = () => {
         width: {
           xs: "95%", // 95% width on extra-small screens (mobile)
           sm: "85%", // 85% width on small screens (tablets)
-          md: "70%", // 70% width on medium screens (laptops)
+          md: "90%", // 70% width on medium screens (laptops)
         },
         maxWidth: "800px",
         height: "100%",
@@ -47,14 +47,25 @@ const Contact = () => {
           sx={{
             fontSize: {
               xs: "1.5rem",
-              sm: "1.5rem",
-              md: "2rem",
+              sm: "2rem",
+              md: "2.2rem",
             },
           }}
         >
           Get started on crafting your solar dreams today!
         </Typography>
-        <Typography variant="h5">Call or email us to get a quote!</Typography>
+        <Typography
+          variant="h5"
+          sx={{
+            fontSize: {
+              xs: "1rem",
+              sm: "1.5rem",
+              md: "2rem",
+            },
+          }}
+        >
+          Call or email us to get a quote!
+        </Typography>
       </Box>
 
       {/* Links Section */}

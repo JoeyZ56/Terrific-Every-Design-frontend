@@ -1,81 +1,146 @@
-import propTypes from "prop-types";
-import "../requestForm.css";
+import PropTypes from "prop-types";
+import { Box, Typography, TextField } from "@mui/material";
 
 const SectionFive = ({ formData, handleChange }) => {
   return (
-    <div className="form-container-info part-five">
-      <h3>5. Battery Information</h3>
-      <h5 className="option-warning">
-        *Section Five is optional, except for California based projects
-      </h5>
-      <label>
-        Battery Brand & Model
-        <input
-          type="text"
-          placeholder="Enter Brand & Model..."
-          name="batteryBrandModel"
-          className="form-info"
-          value={formData.batteryBrandModel}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Number of Batteries
-        <input
-          type="text"
-          placeholder="Enter Number..."
-          name="numberOfBatteries"
-          className="form-info"
-          value={formData.numberOfBatteries}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Battery Location
-        <input
-          type="text"
-          placeholder="Enter Location..."
-          name="batteryLocation"
-          className="form-info"
-          value={formData.batteryLocation}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Battery Size (kWh)
-        <input
-          type="text"
-          placeholder="Enter Size... (kWh)"
-          name="batterySize"
-          className="form-info"
-          value={formData.batterySize}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Specific Notes For Site Surveyor
-        <textarea
-          type="text"
-          placeholder="Specific Notes... (Optional)"
-          name="specificNotes"
-          className="form-info"
-          value={formData.specificNotes}
-          onChange={handleChange}
-        />
-      </label>
-    </div>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 3, padding: 3 }}>
+      <Typography variant="h6" gutterBottom>
+        5. Battery Information
+      </Typography>
+
+      <Typography variant="subtitle2" color="error">
+        *Section Five is optional. EXCEPT for California based projects!
+      </Typography>
+
+      <TextField
+        label="Battery Brand & Model"
+        placeholder="Enter Brand & Model..."
+        name="batteryBrandModel"
+        value={formData.batteryBrandModel}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Number of Batteries"
+        placeholder="Enter Number..."
+        name="numberOfBatteries"
+        value={formData.numberOfBatteries}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Battery Location"
+        placeholder="Enter Location..."
+        name="batteryLocation"
+        value={formData.batteryLocation}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Battery Size (kWh)"
+        placeholder="Enter Size... (kWh)"
+        name="batterySize"
+        value={formData.batterySize}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Specific Notes For Site Surveyor"
+        placeholder="Specific Notes... (Optional)"
+        name="specificNotes"
+        value={formData.specificNotes}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        multiline
+        rows={4}
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+    </Box>
   );
 };
 
 SectionFive.propTypes = {
-  formData: propTypes.shape({
-    batteryBrandModel: propTypes.string,
-    numberOfBatteries: propTypes.string,
-    batteryLocation: propTypes.string,
-    batterySize: propTypes.string,
-    specificNotes: propTypes.string,
+  formData: PropTypes.shape({
+    batteryBrandModel: PropTypes.string,
+    numberOfBatteries: PropTypes.string,
+    batteryLocation: PropTypes.string,
+    batterySize: PropTypes.string,
+    specificNotes: PropTypes.string,
   }).isRequired,
-  handleChange: propTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default SectionFive;

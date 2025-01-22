@@ -1,110 +1,106 @@
 import PropTypes from "prop-types";
-import "../requestForm.css";
+import {
+  Box,
+  Typography,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+  TextField,
+} from "@mui/material";
 
 const SectionFour = ({ formData, handleChange, handleCheckboxChange }) => {
   return (
-    <div className="form-container-info part-four">
-      <div className="checkbox-container">
-        <h3>4. Roofing Information</h3>
-        <div className="checkbox-group">
-          <div>
-            <h6>Roof Type</h6>
-          </div>
-          <div className="checkbox-items">
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                name="roofingInfo"
-                value="Shingle"
-                checked={formData.roofingInfo.includes("Shingle")}
-                onChange={handleCheckboxChange}
-              />
-              Shingle
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                name="roofingInfo"
-                value="Flat-Tile"
-                checked={formData.roofingInfo.includes("Flat-Tile")}
-                onChange={handleCheckboxChange}
-              />
-              Flat-Tile
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                name="roofingInfo"
-                value="Metal"
-                checked={formData.roofingInfo.includes("Metal")}
-                onChange={handleCheckboxChange}
-              />
-              Metal
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                name="roofingInfo"
-                value="S-Tile"
-                checked={formData.roofingInfo.includes("S-Tile")}
-                onChange={handleCheckboxChange}
-              />
-              S-Tile
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                name="roofingInfo"
-                value="Flat-Roof"
-                checked={formData.roofingInfo.includes("Flat-Roof")}
-                onChange={handleCheckboxChange}
-              />
-              Flat-Roof
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                name="roofingInfo"
-                value="Ground-Mount"
-                checked={formData.roofingInfo.includes("Ground-Mount")}
-                onChange={handleCheckboxChange}
-              />
-              Ground-Mount
-            </label>
-          </div>
-        </div>
-      </div>
-      <label>
-        Racks To Be Used
-        <input
-          type="text"
-          placeholder="Enter Racks..."
-          name="racksToBeUsed"
-          className="form-info"
-          value={formData.racksToBeUsed}
-          onChange={handleChange}
-          required
-        />
-      </label>
-      <label>
-        Mounts To Be Used
-        <input
-          type="text"
-          placeholder="Enter Mounts..."
-          name="mountsToBeUsed"
-          className="form-info"
-          value={formData.mountsToBeUsed}
-          onChange={handleChange}
-          required
-        />
-      </label>
-    </div>
+    <Box sx={{ display: "flex", flexDirection: "column", gap: 3, padding: 3 }}>
+      <Typography variant="h6" gutterBottom>
+        4. Roofing Information
+      </Typography>
+
+      <Box>
+        <Typography variant="subtitle1" gutterBottom>
+          Roof Type
+        </Typography>
+        <FormGroup row>
+          {[
+            "Shingle",
+            "Flat-Tile",
+            "Metal",
+            "S-Tile",
+            "Flat-Roof",
+            "Ground-Mount",
+          ].map((roofType) => (
+            <FormControlLabel
+              key={roofType}
+              control={
+                <Checkbox
+                  name="roofingInfo"
+                  value={roofType}
+                  checked={formData.roofingInfo.includes(roofType)}
+                  onChange={handleCheckboxChange}
+                  sx={{
+                    color: "rgba(77, 77, 77, 0.4)",
+                    "&.Mui-checked": {
+                      color: "#5C6BC0",
+                    },
+                    "&:hover": {
+                      backgroundColor: "rgba(92, 107, 192, 0.15)",
+                    },
+                  }}
+                />
+              }
+              label={roofType}
+            />
+          ))}
+        </FormGroup>
+      </Box>
+
+      <TextField
+        label="Racks To Be Used"
+        placeholder="Enter Racks..."
+        name="racksToBeUsed"
+        value={formData.racksToBeUsed}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+
+      <TextField
+        label="Mounts To Be Used"
+        placeholder="Enter Mounts..."
+        name="mountsToBeUsed"
+        value={formData.mountsToBeUsed}
+        onChange={handleChange}
+        fullWidth
+        variant="outlined"
+        required
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "&:hover fieldset": {
+              borderColor: "#5C6BC0",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#5C6BC0",
+            },
+          },
+          "& .MuiInputLabel-root.Mui-focused": {
+            color: "#5C6BC0",
+          },
+        }}
+      />
+    </Box>
   );
 };
 
