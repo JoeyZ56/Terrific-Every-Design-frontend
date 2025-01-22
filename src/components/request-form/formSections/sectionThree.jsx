@@ -119,7 +119,9 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
 
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={6}>
-          <Typography variant="h6">MPU</Typography>
+          <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+            MPU
+          </Typography>
         </Grid>
         <Grid item xs={6}>
           <FormControlLabel
@@ -148,7 +150,9 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
 
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={6}>
-          <Typography variant="h6">De Rate</Typography>
+          <Typography variant="h6" sx={{ fontSize: "1rem" }}>
+            De Rate
+          </Typography>
         </Grid>
         <Grid item xs={6}>
           <FormControlLabel

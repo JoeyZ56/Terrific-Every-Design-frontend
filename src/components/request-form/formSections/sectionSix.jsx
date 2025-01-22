@@ -149,7 +149,7 @@ const SectionSix = ({ formData, setFormData }) => {
                 }}
               />
             }
-            label="Urgent (6 - 12 Hours) extra $50"
+            label="Urgent (6 - 12 Hours)"
           />
           <FormControlLabel
             control={
@@ -168,7 +168,7 @@ const SectionSix = ({ formData, setFormData }) => {
                 }}
               />
             }
-            label="Priority (within 24 hours) extra $25"
+            label="Priority (within 24 hours)"
           />
           <FormControlLabel
             control={
@@ -187,7 +187,7 @@ const SectionSix = ({ formData, setFormData }) => {
                 }}
               />
             }
-            label="Standard (within 48 hours) standard price"
+            label="Standard (within 48 hours)"
           />
         </FormGroup>
       </Box>

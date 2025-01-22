@@ -9,7 +9,7 @@ const SectionFive = ({ formData, handleChange }) => {
       </Typography>
 
       <Typography variant="subtitle2" color="error">
-        *Section Five is optional. EXCEPT for California based projects!
+        *Section Five is optional
       </Typography>
 
       <TextField
