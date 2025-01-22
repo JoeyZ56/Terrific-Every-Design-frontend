@@ -47,8 +47,8 @@ const Contact = () => {
           sx={{
             fontSize: {
               xs: "1.5rem",
-              sm: "2rem",
-              md: "2.2rem",
+              sm: "1.5rem",
+              md: "2rem",
             },
           }}
         >
@@ -60,7 +60,7 @@ const Contact = () => {
             fontSize: {
               xs: "1rem",
               sm: "1.5rem",
-              md: "2rem",
+              md: "1.8rem",
             },
           }}
         >
