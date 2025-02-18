@@ -105,8 +105,8 @@ const SectionTwo = ({ formData, handleChange }) => {
       />
 
       <TextField
-        label="Number of Inverters"
-        placeholder="Enter Number... (optional)"
+        label="Number of Inverters (Optional)"
+        placeholder="Enter Number..."
         name="numberOfInverters"
         value={formData.numberOfInverters}
         onChange={handleChange}
@@ -129,7 +129,7 @@ const SectionTwo = ({ formData, handleChange }) => {
 
       <Box sx={{ display: "flex", gap: 2 }}>
         <TextField
-          label="Size of Inverter (W/VA)"
+          label="Size of Inverter"
           placeholder="Enter Size..."
           name="sizeOfInverter"
           value={formData.sizeOfInverter}
@@ -153,7 +153,7 @@ const SectionTwo = ({ formData, handleChange }) => {
         />
 
         <TextField
-          label="Electricity Type"
+          label="Electricity Type (W/VA)"
           select
           name="electricityType"
           value={formData.electricityType}
@@ -208,18 +208,18 @@ const SectionTwo = ({ formData, handleChange }) => {
   );
 };
 
-SectionTwo.propTypes = {
-  formData: PropTypes.shape({
-    equipment: PropTypes.string.isRequired,
-    moduleSize: PropTypes.string.isRequired,
-    numberOfModules: PropTypes.string.isRequired,
-    inverterManufacturer: PropTypes.string.isRequired,
-    numberOfInverters: PropTypes.string,
-    electricityType: PropTypes.string.isRequired,
-    sizeOfInverter: PropTypes.string.isRequired,
-    systemSize: PropTypes.string.isRequired,
-  }).isRequired,
-  handleChange: PropTypes.func.isRequired,
-};
+// SectionTwo.propTypes = {
+//   formData: PropTypes.shape({
+//     equipment: PropTypes.string.isRequired,
+//     moduleSize: PropTypes.string.isRequired,
+//     numberOfModules: PropTypes.string.isRequired,
+//     inverterManufacturer: PropTypes.string.isRequired,
+//     numberOfInverters: PropTypes.string,
+//     electricityType: PropTypes.string.isRequired,
+//     sizeOfInverter: PropTypes.string.isRequired,
+//     systemSize: PropTypes.string.isRequired,
+//   }).isRequired,
+//   handleChange: PropTypes.func.isRequired,
+// };
 
 export default SectionTwo;

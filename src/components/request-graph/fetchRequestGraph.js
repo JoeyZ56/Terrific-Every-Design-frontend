@@ -12,7 +12,7 @@ const fetchRequestData = async ({ setChartData, setData }) => {
     }
     const data = await res.json();
     setData(data);
-    console.log("Fetched data: ", data);
+    // console.log("Fetched data: ", data);
 
     if (!data || data.length === 0) {
       console.warn("No data available to process");

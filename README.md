@@ -39,7 +39,7 @@
 
 ### Core Components
 
-    Chart Types: Chart.js supports a variety of chart types, including:
+##### Chart Types: Chart.js supports a variety of chart types, including:
 
         1. Line: Ideal for showing trends over time.
 
@@ -55,7 +55,7 @@
 
         7. Scatter: Shows data points plotted along two axes.
 
-    Scales: Charts use scales to map data values to visual properties. Common scales include:
+##### Scales: Charts use scales to map data values to visual properties. Common scales include:
 
         A. CategoryScale: For categorical data (e.g., months, categories).
 
@@ -63,7 +63,7 @@
 
         C. LogarithmicScale: For data that spans several orders of magnitude.
 
-    Elements: The visual components of a chart:
+##### Elements: The visual components of a chart:
 
         A. BarElement: Represents bars in bar charts.
 
@@ -77,21 +77,9 @@
 
     npm install chart.js
 
-##### Future Development
-
-    - Make Website moble frendly
-
-    - Add subtotal section for accumulated price
-
-    - AI virtual assistant
-
 ##### Link To Backend
 
     - https://github.com/JoeyZ56/Terrific-Every-Design-backend
-
-### Future Fixes:
-
-    - Reload on form page causes a 404 error to occur. I plan on fixing this to allow a seemless refresh without causing the error to interupt user experiences.
 
 ### Material UI
 
@@ -102,3 +90,15 @@ A warm, muted orange that feels natural and grounded.
 
 • Blue: Deep Slate Blue (#5C6BC0)
 A soft, calm blue that complements the orange without being too bold.
+
+### Issues:
+
+- Images that are more than 10MBs in total will cause the form to fail submission.
+
+##### Future Development
+
+    - Add subtotal section for accumulated price
+
+    - AI virtual assistant
+
+    -Add firebase to allow Stripe to handle payments

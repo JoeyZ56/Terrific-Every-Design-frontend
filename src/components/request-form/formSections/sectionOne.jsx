@@ -9,11 +9,12 @@ const SectionOne = ({ formData, handleChange }) => {
       </Typography>
 
       <TextField
-        label="Name or Company"
-        placeholder="Enter Name... (optional)"
+        label="Name or Company Name"
+        placeholder="Enter Name..."
         name="name"
         value={formData.name}
         onChange={handleChange}
+        required
         fullWidth
         variant="outlined"
         sx={{
@@ -235,8 +236,8 @@ const SectionOne = ({ formData, handleChange }) => {
       </TextField>
 
       <TextField
-        label="AHJ"
-        placeholder="Enter AHJ... (optional)"
+        label="AHJ (Optional)"
+        placeholder="Enter AHJ..."
         name="ahj"
         value={formData.ahj}
         onChange={handleChange}
@@ -258,8 +259,8 @@ const SectionOne = ({ formData, handleChange }) => {
       />
 
       <TextField
-        label="APN (If Known)"
-        placeholder="Enter APN... (optional)"
+        label="APN (Optional)"
+        placeholder="Enter APN..."
         name="apn"
         value={formData.apn}
         onChange={handleChange}
@@ -283,19 +284,19 @@ const SectionOne = ({ formData, handleChange }) => {
   );
 };
 
-SectionOne.propTypes = {
-  formData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    contactNumber: PropTypes.string.isRequired,
-    address: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired,
-    zipCode: PropTypes.string.isRequired,
-    state: PropTypes.string.isRequired,
-    ahj: PropTypes.string.isRequired,
-    apn: PropTypes.string.isRequired,
-  }).isRequired,
-  handleChange: PropTypes.func.isRequired,
-};
+// SectionOne.propTypes = {
+//   formData: PropTypes.shape({
+//     name: PropTypes.string.isRequired,
+//     email: PropTypes.string.isRequired,
+//     contactNumber: PropTypes.string.isRequired,
+//     address: PropTypes.string.isRequired,
+//     city: PropTypes.string.isRequired,
+//     zipCode: PropTypes.string.isRequired,
+//     state: PropTypes.string.isRequired,
+//     ahj: PropTypes.string.isRequired,
+//     apn: PropTypes.string.isRequired,
+//   }).isRequired,
+//   handleChange: PropTypes.func.isRequired,
+// };
 
 export default SectionOne;

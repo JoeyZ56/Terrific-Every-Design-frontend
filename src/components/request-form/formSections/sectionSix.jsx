@@ -5,6 +5,8 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
+  RadioGroup,
+  Radio,
 } from "@mui/material";
 
 const SectionSix = ({ formData, setFormData }) => {
@@ -23,7 +25,7 @@ const SectionSix = ({ formData, setFormData }) => {
       </Typography>
 
       <Box>
-        <Typography variant="subtitle1">Special Request</Typography>
+        <Typography variant="subtitle1">Special Request (Optional)</Typography>
         <FormGroup>
           <FormControlLabel
             control={
@@ -67,14 +69,19 @@ const SectionSix = ({ formData, setFormData }) => {
       </Box>
 
       <Box>
-        <Typography variant="subtitle1">Design Type</Typography>
-        <FormGroup>
+        <Typography variant="subtitle1">Design Type (Select One)</Typography>
+        <RadioGroup
+          name="designType"
+          value={formData.designType}
+          onChange={(e) =>
+            setFormData({ ...formData, designType: e.target.value })
+          }
+          required
+        >
           <FormControlLabel
+            value="Regular"
             control={
-              <Checkbox
-                name="designTypeRegular"
-                checked={formData.designTypeRegular}
-                onChange={handleCheckboxChange}
+              <Radio
                 sx={{
                   color: "rgba(77, 77, 77, 0.4)",
                   "&.Mui-checked": {
@@ -89,11 +96,9 @@ const SectionSix = ({ formData, setFormData }) => {
             label="Regular"
           />
           <FormControlLabel
+            value="Battery"
             control={
-              <Checkbox
-                name="designTypeBattery"
-                checked={formData.designTypeBattery}
-                onChange={handleCheckboxChange}
+              <Radio
                 sx={{
                   color: "rgba(77, 77, 77, 0.4)",
                   "&.Mui-checked": {
@@ -108,11 +113,9 @@ const SectionSix = ({ formData, setFormData }) => {
             label="Battery"
           />
           <FormControlLabel
+            value="Commercial"
             control={
-              <Checkbox
-                name="designTypeCommercial"
-                checked={formData.designTypeCommercial}
-                onChange={handleCheckboxChange}
+              <Radio
                 sx={{
                   color: "rgba(77, 77, 77, 0.4)",
                   "&.Mui-checked": {
@@ -126,18 +129,23 @@ const SectionSix = ({ formData, setFormData }) => {
             }
             label="Commercial"
           />
-        </FormGroup>
+        </RadioGroup>
       </Box>
 
       <Box>
-        <Typography variant="subtitle1">Priority</Typography>
-        <FormGroup>
+        <Typography variant="subtitle1">Priority (Select One)</Typography>
+        <RadioGroup
+          name="designType"
+          value={formData.priority}
+          onChange={(e) =>
+            setFormData({ ...formData, priority: e.target.value })
+          }
+          required
+        >
           <FormControlLabel
+            value="Standard"
             control={
-              <Checkbox
-                name="priorityUrgent"
-                checked={formData.priorityUrgent}
-                onChange={handleCheckboxChange}
+              <Radio
                 sx={{
                   color: "rgba(77, 77, 77, 0.4)",
                   "&.Mui-checked": {
@@ -149,14 +157,12 @@ const SectionSix = ({ formData, setFormData }) => {
                 }}
               />
             }
-            label="Urgent (6 - 12 Hours)"
+            label="Standard"
           />
           <FormControlLabel
+            value="Priority"
             control={
-              <Checkbox
-                name="priority24Hours"
-                checked={formData.priority24Hours}
-                onChange={handleCheckboxChange}
+              <Radio
                 sx={{
                   color: "rgba(77, 77, 77, 0.4)",
                   "&.Mui-checked": {
@@ -168,14 +174,12 @@ const SectionSix = ({ formData, setFormData }) => {
                 }}
               />
             }
-            label="Priority (within 24 hours)"
+            label="Priority"
           />
           <FormControlLabel
+            value="Urgent"
             control={
-              <Checkbox
-                name="priority48Hours"
-                checked={formData.priority48Hours}
-                onChange={handleCheckboxChange}
+              <Radio
                 sx={{
                   color: "rgba(77, 77, 77, 0.4)",
                   "&.Mui-checked": {
@@ -187,26 +191,22 @@ const SectionSix = ({ formData, setFormData }) => {
                 }}
               />
             }
-            label="Standard (within 48 hours)"
+            label="Urgent"
           />
-        </FormGroup>
+        </RadioGroup>
       </Box>
     </Box>
   );
 };
 
-SectionSix.propTypes = {
-  formData: PropTypes.shape({
-    electricalEngineeringReport: PropTypes.bool,
-    structuralEngineeringReport: PropTypes.bool,
-    designTypeRegular: PropTypes.bool,
-    designTypeBattery: PropTypes.bool,
-    designTypeCommercial: PropTypes.bool,
-    priorityUrgent: PropTypes.bool,
-    priority24Hours: PropTypes.bool,
-    priority48Hours: PropTypes.bool,
-  }).isRequired,
-  setFormData: PropTypes.func.isRequired,
-};
+// SectionSix.propTypes = {
+//   formData: PropTypes.shape({
+//     electricalEngineeringReport: PropTypes.bool,
+//     structuralEngineeringReport: PropTypes.bool,
+//     designType: PropTypes.bool,
+//     priority: PropTypes.bool,
+//   }).isRequired,
+//   setFormData: PropTypes.func.isRequired,
+// };
 
 export default SectionSix;

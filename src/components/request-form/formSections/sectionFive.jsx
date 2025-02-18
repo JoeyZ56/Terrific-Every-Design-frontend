@@ -5,16 +5,16 @@ const SectionFive = ({ formData, handleChange }) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 3, padding: 3 }}>
       <Typography variant="h6" gutterBottom>
-        5. Battery Information
+        5. Battery Information (Optional)
       </Typography>
 
-      <Typography variant="subtitle2" color="error">
-        *Section Five is optional
-      </Typography>
+      {/* <Typography variant="subtitle2" color="error">
+        *Section Five is Optional
+      </Typography> */}
 
       <TextField
         label="Battery Brand & Model"
-        placeholder="Enter Brand & Model..."
+        placeholder="Enter Brand & Model... (Optional)"
         name="batteryBrandModel"
         value={formData.batteryBrandModel}
         onChange={handleChange}
@@ -37,7 +37,7 @@ const SectionFive = ({ formData, handleChange }) => {
 
       <TextField
         label="Number of Batteries"
-        placeholder="Enter Number..."
+        placeholder="Enter Number... (Optional)"
         name="numberOfBatteries"
         value={formData.numberOfBatteries}
         onChange={handleChange}
@@ -60,7 +60,7 @@ const SectionFive = ({ formData, handleChange }) => {
 
       <TextField
         label="Battery Location"
-        placeholder="Enter Location..."
+        placeholder="Enter Location... (Optional)"
         name="batteryLocation"
         value={formData.batteryLocation}
         onChange={handleChange}
@@ -83,7 +83,7 @@ const SectionFive = ({ formData, handleChange }) => {
 
       <TextField
         label="Battery Size (kWh)"
-        placeholder="Enter Size... (kWh)"
+        placeholder="Enter Size... (kWh) (Optional)"
         name="batterySize"
         value={formData.batterySize}
         onChange={handleChange}
@@ -132,15 +132,15 @@ const SectionFive = ({ formData, handleChange }) => {
   );
 };
 
-SectionFive.propTypes = {
-  formData: PropTypes.shape({
-    batteryBrandModel: PropTypes.string,
-    numberOfBatteries: PropTypes.string,
-    batteryLocation: PropTypes.string,
-    batterySize: PropTypes.string,
-    specificNotes: PropTypes.string,
-  }).isRequired,
-  handleChange: PropTypes.func.isRequired,
-};
+// SectionFive.propTypes = {
+//   formData: PropTypes.shape({
+//     batteryBrandModel: PropTypes.string,
+//     numberOfBatteries: PropTypes.string,
+//     batteryLocation: PropTypes.string,
+//     batterySize: PropTypes.string,
+//     specificNotes: PropTypes.string,
+//   }).isRequired,
+//   handleChange: PropTypes.func.isRequired,
+// };
 
 export default SectionFive;

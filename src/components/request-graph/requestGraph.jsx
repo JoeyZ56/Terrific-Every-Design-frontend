@@ -16,7 +16,7 @@ import {
   CardContent,
   CircularProgress,
 } from "@mui/material";
-import ErrorBoundary from "../errorBoundary/errorBoundary";
+// import ErrorBoundary from "../errorBoundary/errorBoundary";
 import fetchRequestData from "./fetchRequestGraph";
 
 // Register the chart.js plugins
@@ -180,26 +180,4 @@ const RequestGraph = () => {
   );
 };
 
-function RequestGraphWithErrorBoundary(props) {
-  return (
-    <ErrorBoundary
-      fallbackComponent={
-        <Typography
-          variant="h6"
-          sx={{
-            textAlign: "center",
-            color: "red",
-            fontWeight: "bold",
-            marginTop: 4,
-          }}
-        >
-          Visual Graph is down...
-        </Typography>
-      }
-    >
-      <RequestGraph {...props} />
-    </ErrorBoundary>
-  );
-}
-
-export default RequestGraphWithErrorBoundary;
+export default RequestGraph;

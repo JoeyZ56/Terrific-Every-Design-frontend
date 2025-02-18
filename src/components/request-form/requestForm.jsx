@@ -50,7 +50,7 @@ const RequestForm = () => {
     mpu: false,
     deRate: false,
     //part four
-    roofingInfo: [],
+    roofingInfo: "",
     racksToBeUsed: "",
     mountsToBeUsed: "",
     //part five
@@ -62,12 +62,8 @@ const RequestForm = () => {
     //part six
     electricalEngineeringReport: false,
     structuralEngineeringReport: false,
-    designTypeRegular: false,
-    designTypeBattery: false,
-    designTypeCommercial: false,
-    priorityUrgent: false,
-    priority24Hours: false,
-    priority48Hours: false,
+    designType: "",
+    priority: "",
     //part seven
     fileUpload: null,
   });
@@ -77,43 +73,50 @@ const RequestForm = () => {
   };
 
   const handleFileChange = (e) => {
-    const files = Array.from(e.target.files);
+    const uploadUrls = e.target.files; //
     setFormData((prevState) => ({
       ...prevState,
-      fileUpload: [...(prevState.fileUpload || []), ...files],
+      fileUpload: uploadUrls, //store files in formData
     }));
-  };
-
-  const handleCheckboxChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => {
-      const updateArray = prevState[name].includes(value)
-        ? prevState[name].filter((item) => item !== value)
-        : [...prevState[name], value];
-      return {
-        ...prevState,
-        [name]: updateArray,
-      };
-    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
+    //Validate required fields
+    if (!formData.roofingInfo) {
+      alert("Please select a Roof Type option before submitting.");
+      setLoading(false);
+    }
+
+    if (!formData.designType) {
+      alert("Please select a Design Type option before submitting.");
+      setLoading(false);
+    }
+
+    if (!formData.priority) {
+      alert("Please select a Priority option before submitting.");
+      setLoading(false);
+      return;
+    }
+
     const data = new FormData();
     for (const key in formData) {
       if (key === "fileUpload") {
         const files = formData[key] || [];
         files.forEach((file) => {
-          data.append("fileUpload", file);
+          data.append("fileUpload", file); // Append all URLs under the same key
         });
+      } else if (typeof formData[key] === "boolean") {
+        data.append(key, formData[key] ? "true" : "false"); // Ensure boolean stays a string
       } else {
         data.append(key, formData[key]);
       }
     }
 
     console.log("Submitting form data:", formData);
+    console.log("File Upload Contents:", formData.fileUpload);
 
     try {
       const apiKey = import.meta.env.VITE_API_KEY;
@@ -123,7 +126,7 @@ const RequestForm = () => {
         },
       });
       alert(
-        "Your form submitted successfully! Thank you for choosing Terific Every Design. Our team will contact you shortly."
+        "Your form submitted successfully! Thank you for choosing Terrific Every Design. Our team will contact you shortly."
       );
       // returns to home page after alert has been clicked
       window.location.href = "/";
@@ -182,7 +185,7 @@ const RequestForm = () => {
               <SectionFour
                 formData={formData}
                 handleChange={handleChange}
-                handleCheckboxChange={handleCheckboxChange}
+                setFormData={setFormData}
               />
               <SectionFive formData={formData} handleChange={handleChange} />
               <SectionSix

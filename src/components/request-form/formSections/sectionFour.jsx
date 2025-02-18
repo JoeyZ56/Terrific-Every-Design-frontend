@@ -2,13 +2,13 @@ import PropTypes from "prop-types";
 import {
   Box,
   Typography,
-  FormGroup,
   FormControlLabel,
-  Checkbox,
   TextField,
+  RadioGroup,
+  Radio,
 } from "@mui/material";
 
-const SectionFour = ({ formData, handleChange, handleCheckboxChange }) => {
+const SectionFour = ({ formData, handleChange, setFormData }) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 3, padding: 3 }}>
       <Typography variant="h6" gutterBottom>
@@ -17,40 +17,39 @@ const SectionFour = ({ formData, handleChange, handleCheckboxChange }) => {
 
       <Box>
         <Typography variant="subtitle1" gutterBottom>
-          Roof Type
+          Roof Type (Select One)
         </Typography>
-        <FormGroup row>
-          {[
-            "Shingle",
-            "Flat-Tile",
-            "Metal",
-            "S-Tile",
-            "Flat-Roof",
-            "Ground-Mount",
-          ].map((roofType) => (
-            <FormControlLabel
-              key={roofType}
-              control={
-                <Checkbox
-                  name="roofingInfo"
-                  value={roofType}
-                  checked={formData.roofingInfo.includes(roofType)}
-                  onChange={handleCheckboxChange}
-                  sx={{
-                    color: "rgba(77, 77, 77, 0.4)",
-                    "&.Mui-checked": {
-                      color: "#5C6BC0",
-                    },
-                    "&:hover": {
-                      backgroundColor: "rgba(92, 107, 192, 0.15)",
-                    },
-                  }}
-                />
-              }
-              label={roofType}
-            />
-          ))}
-        </FormGroup>
+        <RadioGroup
+          name="roofingInfo"
+          value={formData.roofingInfo}
+          onChange={(e) =>
+            setFormData({ ...formData, roofingInfo: e.target.value })
+          }
+          required
+        >
+          <FormControlLabel
+            value="Shingle"
+            control={<Radio />}
+            label="Shingle"
+          />
+          <FormControlLabel
+            value="Flat-Tile"
+            control={<Radio />}
+            label="Flat-Tile"
+          />
+          <FormControlLabel value="Metal" control={<Radio />} label="Metal" />
+          <FormControlLabel value="S-Tile" control={<Radio />} label="S-Tile" />
+          <FormControlLabel
+            value="Flat-Roof"
+            control={<Radio />}
+            label="Flat-Roof"
+          />
+          <FormControlLabel
+            value="Ground-Mount"
+            control={<Radio />}
+            label="Ground-Mount"
+          />
+        </RadioGroup>
       </Box>
 
       <TextField
@@ -104,14 +103,14 @@ const SectionFour = ({ formData, handleChange, handleCheckboxChange }) => {
   );
 };
 
-SectionFour.propTypes = {
-  formData: PropTypes.shape({
-    roofingInfo: PropTypes.arrayOf(PropTypes.string).isRequired,
-    racksToBeUsed: PropTypes.string,
-    mountsToBeUsed: PropTypes.string,
-  }).isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleCheckboxChange: PropTypes.func.isRequired,
-};
+// SectionFour.propTypes = {
+//   formData: PropTypes.shape({
+//     roofingInfo: PropTypes.bool,
+//     racksToBeUsed: PropTypes.string,
+//     mountsToBeUsed: PropTypes.string,
+//   }).isRequired,
+//   handleChange: PropTypes.func.isRequired,
+//   handleCheckboxChange: PropTypes.func.isRequired,
+// };
 
 export default SectionFour;

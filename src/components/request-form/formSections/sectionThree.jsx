@@ -47,8 +47,8 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
       />
 
       <TextField
-        label="Existing M.S.P. Manufacturer"
-        placeholder="Enter Existing M.S.P.... (optional)"
+        label="Existing M.S.P. Manufacturer (Optional)"
+        placeholder="Enter Existing M.S.P...."
         name="mspManufacturer"
         value={formData.mspManufacturer}
         onChange={handleChange}
@@ -182,17 +182,17 @@ const SectionThree = ({ formData, handleChange, setFormData }) => {
   );
 };
 
-SectionThree.propTypes = {
-  formData: PropTypes.shape({
-    meterLocation: PropTypes.string.isRequired,
-    mspManufacturer: PropTypes.string,
-    mspBuzzRate: PropTypes.string.isRequired,
-    mainBreakerSize: PropTypes.string.isRequired,
-    mpu: PropTypes.bool.isRequired,
-    deRate: PropTypes.bool.isRequired,
-  }).isRequired,
-  handleChange: PropTypes.func.isRequired,
-  setFormData: PropTypes.func.isRequired,
-};
+// SectionThree.propTypes = {
+//   formData: PropTypes.shape({
+//     meterLocation: PropTypes.string.isRequired,
+//     mspManufacturer: PropTypes.string,
+//     mspBuzzRate: PropTypes.string.isRequired,
+//     mainBreakerSize: PropTypes.string.isRequired,
+//     mpu: PropTypes.bool.isRequired,
+//     deRate: PropTypes.bool.isRequired,
+//   }).isRequired,
+//   handleChange: PropTypes.func.isRequired,
+//   setFormData: PropTypes.func.isRequired,
+// };
 
 export default SectionThree;
