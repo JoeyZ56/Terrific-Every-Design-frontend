@@ -104,19 +104,13 @@ const RequestForm = () => {
     const data = new FormData();
     for (const key in formData) {
       if (key === "fileUpload") {
-        const files = formData[key] || [];
-        files.forEach((file) => {
-          data.append("fileUpload", file); // Append all URLs under the same key
-        });
+        data.append("fileUpload", JSON.stringify(formData.fileUpload)); // Convert fileUpload to JSON string
       } else if (typeof formData[key] === "boolean") {
         data.append(key, formData[key] ? "true" : "false"); // Ensure boolean stays a string
       } else {
         data.append(key, formData[key]);
       }
     }
-
-    console.log("Submitting form data:", formData);
-    console.log("File Upload Contents:", formData.fileUpload);
 
     try {
       const apiKey = import.meta.env.VITE_API_KEY;
@@ -174,6 +168,7 @@ const RequestForm = () => {
             >
               Service Request Form
             </Typography>
+
             <form onSubmit={handleSubmit}>
               <SectionOne formData={formData} handleChange={handleChange} />
               <SectionTwo formData={formData} handleChange={handleChange} />
